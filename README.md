@@ -1,78 +1,78 @@
-# Macropad для macOS
+# Macropad for macOS
 
-Макропад на ESP32-S3 SuperMini с шестью механическими клавишами, энкодером с кнопкой, OLED SH1106 128×64 и четырьмя внешними RGB-светодиодами WS2812.
+An ESP32-S3 SuperMini macropad with six mechanical keys, a rotary encoder with a push button, a SH1106 128×64 OLED, and four external WS2812 RGB LEDs.
 
-## Структура проекта
+## Project structure
 
 ```text
 macropad/
-├── firmware/                 # Тестовая прошивка, тесты и инструкции
+├── firmware/                 # Test firmware, tests, and instructions
 │   ├── macropad_test/
 │   │   ├── macropad_test.ino
 │   │   └── InputLogic.h
 │   ├── tests/test_inputs.cpp
 │   ├── README.md
 │   └── VERIFICATION.md
-├── cad/                      # STL и 3MF механической части
+├── cad/                      # STL and 3MF mechanical assets
 │   ├── MX.stl
 │   ├── choc.stl
 │   ├── hotswap_mx__with_wing.stl
 │   ├── whotswap-MX-v2.3mf
 │   └── README.md
-├── hardware/                 # Электроника и подключения
+├── hardware/                 # Electronics and wiring
 │   ├── BOM.md
 │   └── WIRING.md
-├── docs/PROJECT_CONTEXT.md   # Архив проектного контекста
+├── docs/PROJECT_CONTEXT.md   # Archived project context
 ├── LICENSE
 └── README.md
 ```
 
-## Прошивка
+## Firmware
 
-В [firmware](firmware/README.md) сохранена без изменений тестовая версия от 7 октября 2026. Она читает клавиши и энкодер, показывает состояния на OLED и в Serial и управляет RGB-подсветкой. USB HID и макросы для macOS пока не реализованы.
+The [firmware directory](firmware/README.md) contains the unchanged test version from October 7, 2026. It reads the keys and encoder, displays their states on the OLED and in Serial, and controls the RGB LEDs. USB HID and macOS macros are not implemented yet.
 
-Настройки текущей версии: `LED_COUNT=4`, яркость `32/255`, антидребезг клавиш `20 мс`, Serial `115200`.
+Current settings: `LED_COUNT=4`, brightness `32/255`, key debounce `20 ms`, Serial `115200`.
 
-### Сборка и загрузка
+### Build and upload
 
-1. Установите в Arduino IDE **esp32 by Espressif Systems 3.3.12**.
-2. Установите библиотеки **U8g2 2.36.19** и **Adafruit NeoPixel 1.15.5**.
-3. Откройте [macropad_test.ino](firmware/macropad_test/macropad_test.ino); файл `InputLogic.h` должен оставаться рядом.
-4. Выберите **ESP32S3 Dev Module**, **USB Mode: Hardware CDC and JTAG**, **USB CDC On Boot: Enabled**, **Flash Size: 4MB**, **PSRAM: Disabled**.
-5. Выберите USB-порт платы, загрузите прошивку и откройте Serial Monitor на **115200**.
+1. Install **esp32 by Espressif Systems 3.3.12** in Arduino IDE.
+2. Install **U8g2 2.36.19** and **Adafruit NeoPixel 1.15.5**.
+3. Open [macropad_test.ino](firmware/macropad_test/macropad_test.ino); keep `InputLogic.h` beside the sketch.
+4. Select **ESP32S3 Dev Module**, **USB Mode: Hardware CDC and JTAG**, **USB CDC On Boot: Enabled**, **Flash Size: 4MB**, and **PSRAM: Disabled**.
+5. Select the board's USB port, upload the firmware, and open Serial Monitor at **115200**.
 
-Полные настройки и порядок аппаратной проверки: [инструкция прошивки](firmware/README.md).
+Full settings and hardware checks: [firmware instructions](firmware/README.md).
 
-### Тесты
+### Tests
 
-Из корня репозитория:
+Run from the repository root:
 
 ```sh
 clang++ -std=c++17 -Wall -Wextra -pedantic firmware/tests/test_inputs.cpp -o /tmp/macropad-input-tests
 /tmp/macropad-input-tests
 ```
 
-[Отчёт от 7 октября](firmware/VERIFICATION.md) содержит результаты компиляции и загрузки. Подтверждены запуск, OLED на адресе `0x3C`, работа энкодера и пяти свитчей; один свитч и визуальная работа RGB оставались непроверенными. Покрытие выделенной логики ввода в исходном отчёте — 100% строк и ветвей; оно не относится ко всей прошивке.
+The [October 7 report](firmware/VERIFICATION.md) records compilation and upload results. Startup, an OLED at `0x3C`, the encoder, and five switches were confirmed; one switch and visible RGB output remained unverified. The original report records 100% line and branch coverage for the extracted input logic, not the entire firmware.
 
-## CAD и печать
+## CAD and printing
 
-Файлы STL и 3MF находятся в [cad](cad/README.md). Сейчас это модели для крепления свитчей; полного корпуса, крышки и параметрических CAD-исходников среди имеющихся файлов нет. Назначение файлов, статус проверки посадки и сведения об авторстве описаны в README этой папки.
+STL and 3MF files are in [cad](cad/README.md). These are switch mounting models; a complete enclosure, lid, and parametric CAD sources are not available yet. The directory README describes each file's intended purpose, fit verification status, and authorship information.
 
-## Детали и подключения
+## Components and wiring
 
-[Список деталей](hardware/BOM.md) содержит состав макета и дополнительные компоненты для завершения сборки. [Распиновка](hardware/WIRING.md) соответствует сохранённой прошивке.
+The [bill of materials](hardware/BOM.md) lists the prototype components and additional parts needed to finish the assembly. The [wiring guide](hardware/WIRING.md) matches the saved firmware.
 
-| Компонент | GPIO |
+| Component | GPIO |
 |---|---|
 | SW1–SW6 | 1, 2, 4, 5, 6, 7 |
-| Энкодер CLK / DT / SW | 8 / 9 / 10 |
+| Encoder CLK / DT / SW | 8 / 9 / 10 |
 | OLED SDA / SCL | 11 / 12 |
-| WS2812 DIN | 13 через 330 Ω |
+| WS2812 DIN | 13 through 330 Ω |
 
-Клавиши замыкают GPIO на общий GND. OLED и модуль энкодера питаются от 3.3 V, WS2812 — от 5 V.
+Keys connect their GPIO to common GND when pressed. The OLED and encoder module use 3.3 V; WS2812 LEDs use 5 V.
 
-## Лицензия
+## License
 
-Собственная прошивка и документация проекта распространяются под [MIT](LICENSE), Copyright (c) 2026 Den. Используемые библиотеки сохраняют свои лицензии.
+The project's own firmware and documentation are licensed under [MIT](LICENSE), Copyright (c) 2026 Den. Dependencies retain their respective licenses.
 
-Авторы, исходные ссылки и лицензии имеющихся STL/3MF пока не установлены. Эти файлы исключены из области действия MIT-лицензии проекта; их условия распространения требуют уточнения.
+The authors, source links, and licenses of the existing STL/3MF files have not been established. These files are excluded from the project's MIT license; their distribution terms still need clarification.

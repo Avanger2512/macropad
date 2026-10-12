@@ -1,14 +1,14 @@
-# Файлы механической части
+# Mechanical assets
 
-Сюда перенесены без изменения исходные файлы из корня проекта.
+The original files were moved here from the project root. Model geometry is unchanged; the 3MF slicer profile name was translated into English.
 
-| Файл | Назначение по имени |
+| File | Intended purpose based on its name |
 |---|---|
-| [MX.stl](MX.stl) | Модель для MX-свитча |
-| [choc.stl](choc.stl) | Модель для Choc-свитча, альтернативного типа |
-| [hotswap_mx__with_wing.stl](hotswap_mx__with_wing.stl) | Hot-swap крепление MX с боковыми выступами |
-| [whotswap-MX-v2.3mf](whotswap-MX-v2.3mf) | Проект 3MF для hot-swap MX |
+| [MX.stl](MX.stl) | Model for an MX switch |
+| [choc.stl](choc.stl) | Model for the alternative Choc switch type |
+| [hotswap_mx__with_wing.stl](hotswap_mx__with_wing.stl) | MX hot-swap mount with side wings |
+| [whotswap-MX-v2.3mf](whotswap-MX-v2.3mf) | 3MF project for MX hot-swap mounting |
 
-Назначение указано по именам файлов; геометрия, посадка свитчей и печатные профили в рамках подготовки репозитория не проверялись. Полного корпуса, крышки и параметрических CAD-исходников среди имеющихся файлов нет. Не считать эти модели готовым комплектом корпуса.
+Purposes are inferred from filenames. Geometry, switch fit, and print profiles were not checked during repository preparation. A complete enclosure, lid, and parametric CAD sources are not available. These models do not constitute a complete enclosure kit.
 
-Авторы, исходные ссылки и лицензии моделей пока не установлены. Общая лицензия на прошивку не изменяет условия распространения этих файлов. Происхождение файлов и условия их распространения остаются неуточнёнными.
+The model authors, original source links, and licenses have not been established. The firmware license does not change the distribution terms of these files. Their provenance and distribution terms remain unresolved.

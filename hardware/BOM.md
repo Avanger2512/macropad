@@ -1,25 +1,25 @@
-# Список деталей
+# Bill of materials
 
-Состав текущего макета и конфигурация сохранённой тестовой прошивки. Ссылки на покупки и точные артикулы в доступных материалах отсутствуют.
+Components of the current prototype and the saved test firmware configuration. Purchase links and exact part numbers are not available in the recovered materials.
 
-| Деталь | Количество | Примечание |
+| Component | Quantity | Notes |
 |---|---:|---|
-| ESP32-S3 SuperMini | 1 | В отчёте загрузки: ESP32-S3 rev. v0.2, flash 4 MB, PSRAM 2 MB; PSRAM отключена |
-| Механический свитч MX | 6 | Прямое подключение к GPIO; точный производитель/модель не зафиксированы |
-| Кейкап для выбранного свитча | 6 | Для завершённой сборки; наличие не зафиксировано |
-| Поворотный энкодер с кнопкой | 1 | CLK/DT/SW; обозначался KY-040, точная модель не установлена |
-| OLED I²C SH1106 128×64 | 1 | Прошивка настроена на этот контроллер; отвечает адрес 0x3C; размер 1.3″ указан в контексте |
-| Адресные RGB WS2812, 5 V | 4 LED | Количество уточнено пользователем и сохранено в прошивке |
-| Резистор 330 Ω | 1 | Последовательно между GPIO13 и DIN |
-| USB-кабель с передачей данных | 1 | Разъём по плате; питание и загрузка |
-| Макетная плата и соединительные провода | По сборке | Макетка собрана; количество проводов не зафиксировано |
+| ESP32-S3 SuperMini | 1 | Upload report: ESP32-S3 rev. v0.2, 4 MB flash, 2 MB PSRAM; PSRAM disabled |
+| MX mechanical switch | 6 | Direct GPIO connections; exact manufacturer and model not recorded |
+| Keycap compatible with the selected switch | 6 | Needed for the completed assembly; availability not recorded |
+| Rotary encoder with push button | 1 | CLK/DT/SW; referred to as KY-040, exact model not established |
+| SH1106 128×64 I²C OLED | 1 | Firmware uses this controller; responds at 0x3C; context mentions a 1.3-inch display |
+| WS2812 addressable RGB LEDs, 5 V | 4 LEDs | Count confirmed by the user and saved in firmware |
+| 330 Ω resistor | 1 | In series between GPIO13 and DIN |
+| USB data cable | 1 | Connector depends on the board; used for power and uploads |
+| Breadboard and jumper wires | As required | Prototype assembled; wire count not recorded |
 
-## Для завершения механической сборки
+## Parts needed to finish the mechanical assembly
 
-- Крепления/сокеты для шести свитчей: тип и количество конкретных печатных деталей ещё не определены. Имеющиеся модели перечислены в [cad/README.md](../cad/README.md).
-- Корпус, ручка энкодера, крепёж: готовые файлы, размеры и спецификация не зафиксированы.
-- Hot-swap контакты/сокеты: точный тип не установлен; соответствие имеющимся моделям не проверено.
+- Mounts or sockets for six switches: the type and quantity of individual printed parts have not been decided. Available models are listed in [cad/README.md](../cad/README.md).
+- Enclosure, encoder knob, and fasteners: finished files, dimensions, and specifications have not been recorded.
+- Hot-swap contacts or sockets: exact type not established; compatibility with the available models has not been checked.
 
-## Дополнительно рекомендовано в исходной инструкции
+## Additional parts recommended in the original instructions
 
-Конденсатор 470–1000 мкФ между питанием RGB 5 V и GND и преобразователь уровня 74AHCT125 или 74HCT245 для DIN. Их наличие на текущей макетке не подтверждено. См. [исходную инструкцию](../firmware/README.md).
+A 470–1000 µF capacitor between RGB 5 V and GND, and a 74AHCT125 or 74HCT245 level shifter for DIN. Their presence in the current prototype is not confirmed. See the [original instructions](../firmware/README.md).

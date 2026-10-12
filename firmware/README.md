@@ -1,22 +1,22 @@
-# Тест ESP32-S3 SuperMini — Arduino Framework
+# ESP32-S3 SuperMini Test — Arduino Framework
 
-Откройте `macropad_test/macropad_test.ino` в Arduino IDE. Файл `InputLogic.h` должен оставаться рядом со скетчем. USB HID не используется; Serial работает через native USB CDC.
+Open `macropad_test/macropad_test.ino` in Arduino IDE. Keep `InputLogic.h` next to the sketch. USB HID is not used; Serial runs over native USB CDC.
 
-## Зависимости, зафиксированные для сборки
+## Pinned Build Dependencies
 
 - Boards Manager: **esp32 by Espressif Systems 3.3.12**.
 - Library Manager: **U8g2 by oliver 2.36.19**.
 - Library Manager: **Adafruit NeoPixel by Adafruit 1.15.5**.
-- `Wire`, `Arduino`, GPIO и прерывания входят в esp32 core.
+- `Wire`, `Arduino`, GPIO, and interrupts are included in the esp32 core.
 
-Дополнительный URL Boards Manager:
+Additional Boards Manager URL:
 `https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json`
 
-Версии проверены по официальным каталогам Arduino. U8g2 2.36.19 — опубликованная версия Library Manager; версия master репозитория может быть новее.
+Versions were checked against the official Arduino catalogs. U8g2 2.36.19 is a published Library Manager release; the repository's master version may be newer.
 
 ## Arduino IDE → Tools
 
-| Параметр | Значение |
+| Setting | Value |
 |---|---|
 | Board | ESP32S3 Dev Module |
 | USB Mode | Hardware CDC and JTAG |
@@ -26,56 +26,56 @@
 | Upload Mode | UART0 / Hardware CDC |
 | CPU Frequency | 240MHz (WiFi) |
 | Flash Mode | DIO 80MHz |
-| Flash Size | 4MB (32Mb), предварительный профиль |
+| Flash Size | 4MB (32Mb), provisional profile |
 | Partition Scheme | Default 4MB with spiffs (1.2MB APP/1.5MB SPIFFS) |
 | PSRAM | Disabled |
 | Upload Speed | 460800 |
 | Core Debug Level | None |
 | Erase All Flash Before Sketch Upload | Disabled |
-| Port | USB-порт подключённой платы |
+| Port | USB port of the connected board |
 
-Название SuperMini не определяет однозначно объём/тип памяти. Профиль 4MB без PSRAM подходит для тестовой сборки и платы с минимум 4MB flash; если у вашей ревизии другой объём, выберите его по маркировке/данным продавца. Прошивка не требует PSRAM. Компиляция не подтверждает параметры конкретного экземпляра.
+The SuperMini name does not uniquely identify the memory size or type. The 4MB profile with PSRAM disabled is suitable for the test build and a board with at least 4MB of flash; if your revision has a different capacity, select it according to its markings or the seller's specifications. The firmware does not require PSRAM. Compilation does not confirm the specifications of an individual board.
 
-## Подключения
+## Wiring
 
-| Устройство | GPIO / питание |
+| Device | GPIO / Power |
 |---|---|
 | SW1 / SW2 / SW3 / SW4 / SW5 / SW6 | 1 / 2 / 4 / 5 / 6 / 7 |
 | Encoder CLK / DT / SW | 8 / 9 / 10 |
 | SH1106 SDA / SCL | 11 / 12 |
-| WS2812 DIN | 13 через 330 Ом |
-| OLED и encoder VCC | 3.3V |
+| WS2812 DIN | 13 through 330 ohms |
+| OLED and encoder VCC | 3.3V |
 | WS2812 VCC | 5V |
-| Все земли | Общий GND |
+| All grounds | Common GND |
 
-Каждый switch замыкает GPIO на GND; INPUT_PULLUP включён, нажатие = LOW. У голого энкодера общий контакт A/B подключается к GND; VCC относится к модулю энкодера. Дисплей настроен именно на SH1106 128×64, поиск адреса 0x3C и 0x3D.
+Each switch connects its GPIO to GND; INPUT_PULLUP is enabled, and pressed = LOW. For a bare encoder, connect the common A/B terminal to GND; VCC applies to an encoder module. The display is configured specifically for SH1106 128×64, scanning addresses 0x3C and 0x3D.
 
-## Настраиваемые константы
+## Configurable Constants
 
-В начале скетча:
+At the beginning of the sketch:
 
-- `LED_COUNT = 4`: измените на фактическое число внешних WS2812. Все указанные светодиоды показывают одинаковый цвет. Автоматически определить их число нельзя.
-- `LED_BRIGHTNESS = 32`: невысокая яркость для теста.
-- `ENCODER_TRANSITIONS = 4`: если счётчик меняется раз в два щелчка, попробуйте 2.
-- `ENCODER_DIRECTION = 1`: установите -1, если направление нужно поменять.
-- `DEBOUNCE_MS = 20`: фильтр кнопок. Энкодер использует декодирование квадратуры, отменяющее обратные переходы при дребезге, вместо задержки на каждом фронте.
+- `LED_COUNT = 4`: change this to the actual number of external WS2812 LEDs. All configured LEDs show the same color. Their number cannot be detected automatically.
+- `LED_BRIGHTNESS = 32`: low brightness for testing.
+- `ENCODER_TRANSITIONS = 4`: if the counter changes once every two detents, try 2.
+- `ENCODER_DIRECTION = 1`: set to -1 to reverse the direction.
+- `DEBOUNCE_MS = 20`: button debounce filter. The encoder uses quadrature decoding that cancels reverse transitions caused by contact bounce, instead of a delay on each edge.
 
-## Проверка после загрузки
+## Checks After Uploading
 
-1. Подключите USB-кабель с передачей данных. Если загрузка не начинается: удерживайте BOOT, нажмите и отпустите RESET, отпустите BOOT; выберите появившийся USB-порт и загрузите. После первой загрузки нажмите RESET при необходимости.
-2. Откройте Serial Monitor на **115200**. События DOWN/UP и ENC печатаются при действиях, STATUS — каждые 2 секунды, даже если монитор открыли после запуска.
-3. На OLED должны появиться шесть состояний кнопок (1 = нажата), положение/кнопка энкодера, A/B и последнее событие. Обновление 10 раз в секунду; краткие нажатия лучше отслеживать также через Serial.
-4. Нажмите каждую кнопку: один DOWN, один UP; цвет соответственно красный, зелёный, синий, жёлтый, голубой, пурпурный. Нажатие encoder SW — белый. Последний цвет сохраняется после отпускания.
-5. Поверните encoder в обе стороны: позиция увеличивается/уменьшается, цвет меняется по кругу оттенков. На старте все 4 WS2812 проходят красный, зелёный и синий цвет по 600 мс; затем остаётся синий. Опрос кнопок начинается после этого теста.
-6. Отсутствующий OLED не блокирует кнопки и RGB: Serial сообщает `OLED missing`; поиск повторяется каждые 5 секунд. Наличие ACK подтверждает I2C-устройство по адресу, но не его модель и не работоспособность матрицы.
+1. Connect a USB data cable. If uploading does not start: hold BOOT, press and release RESET, then release BOOT; select the USB port that appears and upload. After the first upload, press RESET if needed.
+2. Open Serial Monitor at **115200**. DOWN/UP and ENC events are printed when inputs change; STATUS is printed every 2 seconds, even if the monitor was opened after startup.
+3. The OLED should show six button states (1 = pressed), the encoder position/button, A/B, and the latest event. It refreshes 10 times per second; also use Serial to track brief presses.
+4. Press each button: one DOWN and one UP; the corresponding colors are red, green, blue, yellow, cyan, and magenta. Pressing encoder SW selects white. The last color remains after release.
+5. Turn the encoder in both directions: the position increases/decreases, and the color cycles through the hue wheel. At startup, all 4 WS2812 LEDs cycle through red, green, and blue for 600 ms each, then remain blue. Button polling starts after this test.
+6. A missing OLED does not block buttons or RGB: Serial reports `OLED missing`; scanning repeats every 5 seconds. An ACK confirms an I2C device at the address, but does not confirm its model or the display panel's operation.
 
-GPIO энкодера обслуживаются прерываниями, поэтому OLED-передачи не останавливают захват фронтов. События нескольких быстрых шагов могут объединяться в одну запись ENC с величиной изменения.
+Encoder GPIOs are handled by interrupts, so OLED transfers do not stop edge capture. Several fast steps may be combined into one ENC entry with the total change.
 
-## Если RGB не реагирует
+## If RGB Does Not Respond
 
-Проверьте DIN (не DOUT), общую землю, питание и число LED. У WS2812 при питании 5V сигнал 3.3V может не соответствовать гарантированному порогу HIGH. Для устойчивой работы используйте преобразователь уровня 74AHCT125/74HCT245 на 5V между GPIO13 и резистором 330 Ом. Сам резистор уровень не повышает. Рекомендуется конденсатор 500–1000 мкФ на питании ленты; для большого числа LED нужен подходящий источник 5V. Не подавайте 5V на GPIO ESP32.
+Check DIN (not DOUT), the common ground, power, and LED count. With WS2812 powered at 5V, a 3.3V signal may not meet the guaranteed HIGH threshold. For reliable operation, use a 74AHCT125/74HCT245 level shifter powered at 5V between GPIO13 and the 330-ohm resistor. The resistor itself does not raise the signal level. A 500–1000 µF capacitor across the LED strip's power supply is recommended; a large number of LEDs requires a suitable 5V supply. Do not apply 5V to ESP32 GPIOs.
 
-## Источники
+## Sources
 
 - https://github.com/espressif/arduino-esp32/releases/tag/3.3.12
 - https://raw.githubusercontent.com/espressif/arduino-esp32/3.3.12/boards.txt
@@ -85,16 +85,16 @@ GPIO энкодера обслуживаются прерываниями, по�
 - https://github.com/adafruit/Adafruit_NeoPixel/releases/tag/1.15.5
 - https://learn.adafruit.com/adafruit-neopixel-uberguide/best-practices
 
-## Повторяемые проверки
+## Repeatable Checks
 
-Нативные тесты логики доступны в `tests/test_inputs.cpp`. Из папки этого README:
+Native input logic tests are available in `tests/test_inputs.cpp`. Run from this README's directory:
 
 ```sh
 clang++ -std=c++17 -Wall -Wextra -pedantic tests/test_inputs.cpp -o /tmp/macropad-input-tests
 /tmp/macropad-input-tests
 ```
 
-Сборка через Arduino CLI после установки указанных зависимостей:
+Build with Arduino CLI after installing the dependencies listed above:
 
 ```sh
 arduino-cli compile --fqbn 'esp32:esp32:esp32s3:USBMode=hwcdc,CDCOnBoot=cdc,UploadMode=default,FlashMode=dio,FlashSize=4M,PSRAM=disabled,PartitionScheme=default,CPUFreq=240,UploadSpeed=460800' macropad_test

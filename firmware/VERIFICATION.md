@@ -1,28 +1,28 @@
-# Результат проверки — 7 октября 2026
+# Verification Results — October 7, 2026
 
 Arduino CLI 1.2.0, Arduino-ESP32 3.3.12, U8g2 2.36.19, Adafruit NeoPixel 1.15.5.
 
 FQBN:
 `esp32:esp32:esp32s3:USBMode=hwcdc,CDCOnBoot=cdc,UploadMode=default,FlashMode=dio,FlashSize=4M,PSRAM=disabled,PartitionScheme=default,CPUFreq=240,UploadSpeed=460800`
 
-Сборка с `--warnings all` завершилась с exit code 0; ошибок и предупреждений в журнале нет.
+The build with `--warnings all` completed with exit code 0; the log contains no errors or warnings.
 
 ```
 Sketch uses 336622 bytes (25%) of program storage space. Maximum is 1310720 bytes.
 Global variables use 25752 bytes (7%) of dynamic memory, leaving 301928 bytes for local variables. Maximum is 327680 bytes.
 ```
 
-Нативные тесты debounce/квадратурного декодера проходят. Проверены DOWN/UP, дребезг, удержание, переполнение millis, оба направления энкодера, обратные переходы, недопустимый переход и конфигурация числа переходов.
+Native debounce/quadrature decoder tests pass. Checks cover DOWN/UP, contact bounce, holding a button, millis rollover, both encoder directions, reverse transitions, an invalid transition, and transition-count configuration.
 
-Покрытие функций InputLogic.h: 100% строк и ветвей (Clang llvm-cov). Это покрытие выделенной логики ввода, а не всей прошивки и библиотек.
+InputLogic.h function coverage: 100% of lines and branches (Clang llvm-cov). This covers the extracted input logic, not the entire firmware and its libraries.
 
-Компиляция проверяет совместимость Arduino API и библиотек с ESP32-S3. Первоначальная проверка ограничивалась компиляцией; результат последующей загрузки указан ниже. Полный аппаратный тест всех органов ввода и RGB ещё не выполнен. Порядок ручной проверки находится в README.md. Сборка не подтверждает объём flash конкретной ревизии SuperMini.
+Compilation checks Arduino API and library compatibility with ESP32-S3. Initial verification was limited to compilation; the subsequent upload result is recorded below. A full hardware test of all inputs and RGB has not yet been completed. Manual verification steps are in README.md. The build does not confirm the flash capacity of a specific SuperMini revision.
 
-## Загрузка на плату — 7 октября 2026
+## Board Upload — October 7, 2026
 
-По запросу пользователя прошивка успешно загружена на подключённую ESP32-S3 revision v0.2. Определена встроенная flash 4MB и PSRAM 2MB; PSRAM остаётся отключённой в тестовом профиле. Проверка хешей всех записанных областей прошла, загрузчик выполнил перезапуск.
+At the user's request, the firmware was successfully uploaded to the connected ESP32-S3 revision v0.2. Built-in 4MB flash and 2MB PSRAM were detected; PSRAM remains disabled in the test profile. Hash verification passed for all written regions, and the bootloader restarted the board.
 
-Serial Monitor 115200 подтвердил запуск и ответ OLED на I2C-адресе 0x3C:
+Serial Monitor at 115200 confirmed startup and an OLED response at I2C address 0x3C:
 
 ```
 [346 ms] OLED found: 0x3C
@@ -30,10 +30,10 @@ Serial Monitor 115200 подтвердил запуск и ответ OLED на 
 STATUS keys=000000 encSW=0 pos=0 OLED=0x3C
 ```
 
-Наблюдались повторяющиеся STATUS без сообщений об ошибках. Кнопки не нажаты, encoder SW не нажат, позиция 0. Визуальное изображение OLED, цвета WS2812 и события реальных нажатий/вращения требуют ручной проверки. Serial Monitor закрыт после чтения, порт освобождён.
+Repeated STATUS messages were observed without errors. No buttons were pressed, encoder SW was not pressed, and the position was 0. The visible OLED image, WS2812 colors, and events from actual presses/rotation require manual verification. Serial Monitor was closed after reading, releasing the port.
 
-## Обновление RGB — 7 октября 2026
+## RGB Update — October 7, 2026
 
-Пользователь уточнил число WS2812: 4. LED_COUNT=4, яркость 32/255. При запуске добавлены красный/зелёный/синий по 600 мс. Сборка с --warnings all завершилась без предупреждений и ошибок; размер 336726 байт flash, 25752 RAM. Загрузка прошла с проверкой хешей. Serial подтвердил RGB TEST RED/GREEN/BLUE, READY и OLED 0x3C. Это подтверждение выполнения команд, а не визуального свечения.
+The user specified the WS2812 count: 4. LED_COUNT=4, brightness 32/255. A startup sequence was added: red/green/blue for 600 ms each. The build with --warnings all completed without warnings or errors; size was 336726 bytes of flash and 25752 bytes of RAM. Upload completed with hash verification. Serial confirmed RGB TEST RED/GREEN/BLUE, READY, and OLED 0x3C. This confirms command execution, not visible LED illumination.
 
-При предыдущей диагностике зарегистрированы DOWN/UP SW1–SW5; SW6 не подтверждён. Пользователь подтвердил работу свитчей кроме одного и работу энкодера/дисплея. Визуальная работа RGB пока не подтверждена.
+Previous diagnostics recorded DOWN/UP for SW1–SW5; SW6 was not confirmed. The user confirmed that all but one switch worked, and that the encoder/display worked. Visible RGB operation has not yet been confirmed.
