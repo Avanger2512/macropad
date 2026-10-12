@@ -1,0 +1,17 @@
+# Local OS and editors
+.DS_Store
+.idea/
+.vscode/
+# Build output and coverage
+build/
+.pio/
+*.elf
+*.bin
+*.hex
+*.o
+*.profraw
+*.profdata
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
