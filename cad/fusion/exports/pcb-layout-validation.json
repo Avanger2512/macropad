@@ -1,0 +1,12 @@
+{
+  "pcb_left_mm": 5.0,
+  "pcb_front_mm": 62.2,
+  "pcb_rear_mm": 112.2,
+  "pcb_underside_mm": 8.8,
+  "pcb_top_mm": 10.4,
+  "usb_center_x_mm": 41.0,
+  "usb_center_z_mm": 15.9,
+  "header_top_mm": 27.400000000000002,
+  "roof_inner_at_board_front_mm": 25.03262726120844,
+  "status": "Construction guides only; connector footprints and final board mounting pending"
+}

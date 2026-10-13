@@ -1,0 +1,229 @@
+{
+  "vertical_removal_samples": [
+    {
+      "drop_mm": 0,
+      "other": "UpperShell_Draft",
+      "valid": true,
+      "faces": 0,
+      "volume_mm3": 0.0
+    },
+    {
+      "drop_mm": 0,
+      "other": "Diffuser_Draft",
+      "valid": true,
+      "faces": 0,
+      "volume_mm3": 0.0
+    },
+    {
+      "drop_mm": 0.25,
+      "other": "UpperShell_Draft",
+      "valid": true,
+      "faces": 0,
+      "volume_mm3": 0.0
+    },
+    {
+      "drop_mm": 0.25,
+      "other": "Diffuser_Draft",
+      "valid": true,
+      "faces": 0,
+      "volume_mm3": 0.0
+    },
+    {
+      "drop_mm": 0.5,
+      "other": "UpperShell_Draft",
+      "valid": true,
+      "faces": 0,
+      "volume_mm3": 0.0
+    },
+    {
+      "drop_mm": 0.5,
+      "other": "Diffuser_Draft",
+      "valid": true,
+      "faces": 0,
+      "volume_mm3": 0.0
+    },
+    {
+      "drop_mm": 1,
+      "other": "UpperShell_Draft",
+      "valid": true,
+      "faces": 0,
+      "volume_mm3": 0.0
+    },
+    {
+      "drop_mm": 1,
+      "other": "Diffuser_Draft",
+      "valid": true,
+      "faces": 0,
+      "volume_mm3": 0.0
+    },
+    {
+      "drop_mm": 2,
+      "other": "UpperShell_Draft",
+      "valid": true,
+      "faces": 0,
+      "volume_mm3": 0.0
+    },
+    {
+      "drop_mm": 2,
+      "other": "Diffuser_Draft",
+      "valid": true,
+      "faces": 0,
+      "volume_mm3": 0.0
+    },
+    {
+      "drop_mm": 3,
+      "other": "UpperShell_Draft",
+      "valid": true,
+      "faces": 0,
+      "volume_mm3": 0.0
+    },
+    {
+      "drop_mm": 3,
+      "other": "Diffuser_Draft",
+      "valid": true,
+      "faces": 0,
+      "volume_mm3": 0.0
+    },
+    {
+      "drop_mm": 4,
+      "other": "UpperShell_Draft",
+      "valid": true,
+      "faces": 0,
+      "volume_mm3": 0.0
+    },
+    {
+      "drop_mm": 4,
+      "other": "Diffuser_Draft",
+      "valid": true,
+      "faces": 0,
+      "volume_mm3": 0.0
+    },
+    {
+      "drop_mm": 5,
+      "other": "UpperShell_Draft",
+      "valid": true,
+      "faces": 0,
+      "volume_mm3": 0.0
+    },
+    {
+      "drop_mm": 5,
+      "other": "Diffuser_Draft",
+      "valid": true,
+      "faces": 0,
+      "volume_mm3": 0.0
+    },
+    {
+      "drop_mm": 6,
+      "other": "UpperShell_Draft",
+      "valid": true,
+      "faces": 0,
+      "volume_mm3": 0.0
+    },
+    {
+      "drop_mm": 6,
+      "other": "Diffuser_Draft",
+      "valid": true,
+      "faces": 0,
+      "volume_mm3": 0.0
+    },
+    {
+      "drop_mm": 8,
+      "other": "UpperShell_Draft",
+      "valid": true,
+      "faces": 0,
+      "volume_mm3": 0.0
+    },
+    {
+      "drop_mm": 8,
+      "other": "Diffuser_Draft",
+      "valid": true,
+      "faces": 0,
+      "volume_mm3": 0.0
+    },
+    {
+      "drop_mm": 10,
+      "other": "UpperShell_Draft",
+      "valid": true,
+      "faces": 0,
+      "volume_mm3": 0.0
+    },
+    {
+      "drop_mm": 10,
+      "other": "Diffuser_Draft",
+      "valid": true,
+      "faces": 0,
+      "volume_mm3": 0.0
+    },
+    {
+      "drop_mm": 15,
+      "other": "UpperShell_Draft",
+      "valid": true,
+      "faces": 0,
+      "volume_mm3": 0.0
+    },
+    {
+      "drop_mm": 15,
+      "other": "Diffuser_Draft",
+      "valid": true,
+      "faces": 0,
+      "volume_mm3": 0.0
+    },
+    {
+      "drop_mm": 20,
+      "other": "UpperShell_Draft",
+      "valid": true,
+      "faces": 0,
+      "volume_mm3": 0.0
+    },
+    {
+      "drop_mm": 20,
+      "other": "Diffuser_Draft",
+      "valid": true,
+      "faces": 0,
+      "volume_mm3": 0.0
+    },
+    {
+      "drop_mm": 25,
+      "other": "UpperShell_Draft",
+      "valid": true,
+      "faces": 0,
+      "volume_mm3": 0.0
+    },
+    {
+      "drop_mm": 25,
+      "other": "Diffuser_Draft",
+      "valid": true,
+      "faces": 0,
+      "volume_mm3": 0.0
+    },
+    {
+      "drop_mm": 30,
+      "other": "UpperShell_Draft",
+      "valid": true,
+      "faces": 0,
+      "volume_mm3": 0.0
+    },
+    {
+      "drop_mm": 30,
+      "other": "Diffuser_Draft",
+      "valid": true,
+      "faces": 0,
+      "volume_mm3": 0.0
+    },
+    {
+      "drop_mm": 35,
+      "other": "UpperShell_Draft",
+      "valid": true,
+      "faces": 0,
+      "volume_mm3": 0.0
+    },
+    {
+      "drop_mm": 35,
+      "other": "Diffuser_Draft",
+      "valid": true,
+      "faces": 0,
+      "volume_mm3": 0.0
+    }
+  ],
+  "iteration": 3
+}

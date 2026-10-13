@@ -1,0 +1,28 @@
+[
+  {
+    "file": "switch_fit_coupon.stl",
+    "triangles": 272,
+    "size_mm": [
+      22.0,
+      22.000001320558596,
+      13.000000835737811
+    ],
+    "volume_mm3": 1697.159933281251,
+    "closed_edges": true,
+    "bed_z_mm": 0,
+    "rotation_about_x_deg": 175.0
+  },
+  {
+    "file": "lid_support_coupon.stl",
+    "triangles": 76,
+    "size_mm": [
+      22.0,
+      22.000000953674316,
+      15.843049049377441
+    ],
+    "volume_mm3": 1261.0838207140623,
+    "closed_edges": true,
+    "bed_z_mm": 0,
+    "rotation_about_x_deg": 0.0
+  }
+]

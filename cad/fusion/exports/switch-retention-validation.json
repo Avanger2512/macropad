@@ -1,0 +1,35 @@
+{
+  "solids": [
+    {
+      "name": "UpperShell_Draft",
+      "volume_mm3": 43520.64282777783
+    },
+    {
+      "name": "MiddleCarrier_Draft",
+      "volume_mm3": 20146.576620070922
+    },
+    {
+      "name": "BottomCover_Draft",
+      "volume_mm3": 20279.006256077613
+    },
+    {
+      "name": "Diffuser_Draft",
+      "volume_mm3": 2112.5279999999907
+    },
+    {
+      "name": "SwitchFitCoupon_Trial",
+      "volume_mm3": 1697.1611781741904
+    },
+    {
+      "name": "LidSupportCoupon_Trial",
+      "volume_mm3": 1261.0835960242905
+    }
+  ],
+  "timeline": "healthy",
+  "sketches": "fully constrained",
+  "body_intersections": 0,
+  "holder_axis_offset_mm": [
+    0.08972306,
+    -1.49765268
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "iteration": 3,
+  "upper_insert_entry_centers": [
+    {
+      "name": "M1",
+      "entry_mm": [
+        12.0,
+        11.105,
+        15.54329
+      ],
+      "side_wall_axis_gap_mm": 9.6,
+      "end_wall_axis_gap_mm": 8.705
+    },
+    {
+      "name": "M2",
+      "entry_mm": [
+        68.0,
+        11.105,
+        15.54329
+      ],
+      "side_wall_axis_gap_mm": 9.6,
+      "end_wall_axis_gap_mm": 8.705
+    },
+    {
+      "name": "M3",
+      "entry_mm": [
+        12.0,
+        106.04164,
+        23.84917
+      ],
+      "side_wall_axis_gap_mm": 9.6,
+      "end_wall_axis_gap_mm": 6.55836
+    },
+    {
+      "name": "M4",
+      "entry_mm": [
+        68.0,
+        106.04164,
+        23.84917
+      ],
+      "side_wall_axis_gap_mm": 9.6,
+      "end_wall_axis_gap_mm": 6.55836
+    }
+  ],
+  "preserved_lower_screw_centers": [
+    [
+      20.0,
+      4.8,
+      2.0
+    ],
+    [
+      60.0,
+      4.8,
+      2.0
+    ],
+    [
+      4.8,
+      112.0,
+      2.0
+    ],
+    [
+      75.2,
+      112.0,
+      2.0
+    ]
+  ],
+  "interferences": [],
+  "bodies": [
+    {
+      "name": "UpperShell_Draft",
+      "solid": true,
+      "volume_mm3": 36981.81139199036,
+      "min_mm": [
+        0.0,
+        0.0,
+        2.0
+      ],
+      "max_mm": [
+        80.0,
+        115.0,
+        32.0612
+      ]
+    },
+    {
+      "name": "MiddleCarrier_Draft",
+      "solid": true,
+      "volume_mm3": 8504.234541995058,
+      "min_mm": [
+        2.8,
+        2.8,
+        12.54356
+      ],
+      "max_mm": [
+        77.2,
+        112.2,
+        28.99409
+      ]
+    },
+    {
+      "name": "BottomCover_Draft",
+      "solid": true,
+      "volume_mm3": 18366.76194972502,
+      "min_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "max_mm": [
+        80.0,
+        115.0,
+        2.0
+      ]
+    },
+    {
+      "name": "Diffuser_Draft",
+      "solid": true,
+      "volume_mm3": 2411.423999999996,
+      "min_mm": [
+        5.2,
+        89.0395,
+        26.38458
+      ],
+      "max_mm": [
+        74.8,
+        101.67871,
+        30.73908
+      ]
+    }
+  ],
+  "timeline_issues": [],
+  "unconstrained_sketches": [],
+  "face_origin_mm": [
+    0.0,
+    -1.91013,
+    21.83289
+  ],
+  "carrier_removal": "16 sampled downward translations 0\u201335 mm: no intersections; see removal-validation.json",
+  "electronics_fit_validated": false,
+  "validation_backend": "Native Fusion API; independent STEP snapshot/inspection unavailable due to missing OCP/cadpy runtime"
+}

@@ -1,0 +1,135 @@
+{
+  "status": "passed",
+  "source_file": "whotswap-MX-v2.3mf",
+  "source_sha256": "c84700ab3f82f249e580afb4ff5d43f721b423b3b67bb8afb9614be647a24c25",
+  "mesh_member": "3D/Objects/object_1.model",
+  "coordinate_system": "Untransformed mesh-local millimeters",
+  "bounds_mm": [
+    [
+      -5.51573992,
+      5.51573992
+    ],
+    [
+      -4.87455082,
+      4.87455082
+    ],
+    [
+      -2.5999999,
+      2.5999999
+    ]
+  ],
+  "size_mm": [
+    11.03147984,
+    9.74910164,
+    5.1999998
+  ],
+  "axis": {
+    "center_mm": [
+      -0.0897234835562201,
+      1.4976528878704427
+    ],
+    "diameter_mm": 3.999998880495093,
+    "radius_peak_to_peak_mm": 1.702141010362368e-06,
+    "fitted_vertices": 113,
+    "bottom_boundary_vertices": 113,
+    "holder_origin_offset_from_switch_axis_mm": [
+      0.0897234835562201,
+      -1.4976528878704427
+    ],
+    "hole_identity": "MX locating-post hole inferred from diameter and position"
+  },
+  "maximum_sampling_step_mm": 0.025,
+  "lands": [
+    {
+      "name": "Bottom support left",
+      "surface_z_mm": -2.6,
+      "bounds_xy_mm": [
+        -3.0,
+        -2.0,
+        -2.7,
+        0.3
+      ],
+      "samples": 4961,
+      "covered_samples": 4961,
+      "missing_samples": 0,
+      "flat_triangles": 370,
+      "sampled_perimeter_boundary_clearance_mm": 0.25480170821849446
+    },
+    {
+      "name": "Bottom support right",
+      "surface_z_mm": -2.6,
+      "bounds_xy_mm": [
+        2.0,
+        3.0,
+        -2.7,
+        0.3
+      ],
+      "samples": 4961,
+      "covered_samples": 4961,
+      "missing_samples": 0,
+      "flat_triangles": 370,
+      "sampled_perimeter_boundary_clearance_mm": 0.3031170799999998
+    },
+    {
+      "name": "Snap edge left",
+      "surface_z_mm": -2.6,
+      "bounds_xy_mm": [
+        -5.515,
+        -5.215,
+        2.7,
+        4.7
+      ],
+      "samples": 1053,
+      "covered_samples": 1053,
+      "missing_samples": 0,
+      "flat_triangles": 370,
+      "sampled_perimeter_boundary_clearance_mm": 0.000739920000000005
+    },
+    {
+      "name": "Snap edge right",
+      "surface_z_mm": -2.6,
+      "bounds_xy_mm": [
+        5.215,
+        5.515,
+        2.7,
+        4.7
+      ],
+      "samples": 1053,
+      "covered_samples": 1053,
+      "missing_samples": 0,
+      "flat_triangles": 370,
+      "sampled_perimeter_boundary_clearance_mm": 0.000739920000000005
+    },
+    {
+      "name": "Upper stop left",
+      "surface_z_mm": 2.6,
+      "bounds_xy_mm": [
+        -3.5,
+        -2.5,
+        4.0,
+        4.6
+      ],
+      "samples": 1025,
+      "covered_samples": 1025,
+      "missing_samples": 0,
+      "flat_triangles": 41,
+      "sampled_perimeter_boundary_clearance_mm": 0.27455082
+    },
+    {
+      "name": "Upper stop right",
+      "surface_z_mm": 2.6,
+      "bounds_xy_mm": [
+        2.5,
+        3.5,
+        4.0,
+        4.6
+      ],
+      "samples": 1025,
+      "covered_samples": 1025,
+      "missing_samples": 0,
+      "flat_triangles": 41,
+      "sampled_perimeter_boundary_clearance_mm": 0.27455082
+    }
+  ],
+  "limitations": "Discrete surface coverage; does not validate wire routing, switch fit or snap durability"
+}
