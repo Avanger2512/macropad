@@ -1,0 +1,27 @@
+[
+  {
+    "file": "SwitchFitCoupon_Compact_V4.stl",
+    "triangles": 2464,
+    "size_mm": [
+      22.0,
+      22.000001320558596,
+      9.200001255117499
+    ],
+    "volume_mm3": 954.0621918062635,
+    "closed_edges": true,
+    "bed_z_mm": 0,
+    "rotation_about_x_deg": 175.0
+  },
+  {
+    "file": "Hotswap_MX_Compact_Pin_V4.stl",
+    "size_mm": [
+      11.031478881835938,
+      9.749105720856836,
+      5.200003881183726
+    ],
+    "volume_mm3": 276.5071713932753,
+    "triangles": 6240,
+    "closed_edges": true,
+    "bed_z_mm": 0
+  }
+]

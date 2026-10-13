@@ -1,0 +1,13 @@
+{
+  "file": "SwitchFitCoupon_Compact_V2.stl",
+  "triangles": 2908,
+  "size_mm": [
+    22.0,
+    22.000001320558596,
+    12.200001350026874
+  ],
+  "volume_mm3": 1858.5531543071602,
+  "closed_edges": true,
+  "bed_z_mm": 0,
+  "rotation_about_x_deg": 175.0
+}

@@ -1,0 +1,13 @@
+{
+  "file": "/Users/denisbabiichuk/3dPrint/macropad/cad/print/MiddleCarrier_Compact_V4.stl",
+  "size_mm": [
+    74.3999969959259,
+    109.71290086851404,
+    13.67067196071631
+  ],
+  "triangles": 14736,
+  "volume_mm3": 15688.093199312463,
+  "closed_edges": true,
+  "bed_z_mm": 0,
+  "rotation_about_x_deg": 175
+}

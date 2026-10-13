@@ -113,3 +113,59 @@ Final native validation passed for four enclosure bodies and two trial bodies: p
 The standalone STEP snapshot renderer is unavailable because its OCP dependency is missing; CAD Viewer is not installed. Native Fusion screenshots provide the visual check: `exports/macropad-switch-retention-carrier.png` and `exports/macropad-switch-retention-lid.png`. The F3D archive opens with the enclosure visible; auxiliary trial bodies are hidden.
 
 STEP exports include only visible bodies in this Fusion setup. Make all four enclosure bodies and both trial bodies visible before exporting the complete STEP, then restore the desired view. The current complete STEP was checked for all six named manifold solids.
+
+
+## Compact holder fit trial V2
+
+The supplied `cad/hotswap_mx__compact.stl` is now the reference. A separate `SwitchFitCoupon_Compact_V2` body at X145 mm preserves the first trial and the six main carrier receivers. `hotswap_mx__compact_REFERENCE_V2` is an imported reference mesh, aligned by its X0/Y0 central hole and the existing holder bottom datum; use its Browser eye icon to compare or hide it. The source STL remains unchanged.
+
+V2 has continuous receiver walls, no spring snaps or hooks, 1.8 mm upper stops, and 3 mm high rounded side-notch guides with provisional 0.2 mm radial clearance. Four 1.5 mm wire channels follow the exact side-entry bore axes of the supplied STL (native bore diameter 1.1 mm). Two lower X bores have Y/Z centers -2.500016/1.138835 and -5.099996/1.172852 mm; the upper X bore is -3.011004/4.093049 mm, and the upper Y bore has X/Z center 4.190238/4.093049 mm. Full projection through opposite walls creates several visible entry/exit holes.
+
+Print `cad/print/SwitchFitCoupon_Compact_V2.stl` in millimeters, without rescaling. Its footprint is 22 x 22 mm and height is 12.2 mm; the flat switch plate is already on the bed. Start with the same material and settings as V1 for comparison. Check upper-stop bridging in the slicer. Test insertion without force, guide clearance, wire threading through the assembled holder and receiver, and alignment with the actual switch. Removing the snaps means the bottom cover/support remains responsible for axial support; this trial does not establish standalone retention without the lid.
+
+Native Fusion validation found one positive-volume V2 solid, healthy timeline features and fully constrained sketches. None of 2,770 unique reference-mesh vertices or 5,568 triangle centroids were inside the receiver solid. This is a sampled interference check, not proof of all surface clearance or physical switch fit. The printable STL is closed with positive signed volume. Reports are `exports/compact-v2-validation.json` and `exports/compact-v2-print-validation.json`. Native snapshots are `exports/compact-v2-receiver.png` and `exports/compact-v2-assembled.png`; standalone STEP inspection/rendering could not run because cadpy/OCP is unavailable, and a separate CAD Viewer is not installed.
+
+Files: `macropad_compact_trial_v2.py` adds V2 once; `verify_compact_v2_fusion.py` validates and exports from the active Fusion document. `exports/macropad_before_compact_v2.f3d` preserves the pre-change state. `exports/macropad_compact_trial_v2.f3d` preserves the new document with the reference mesh. `exports/switch_fit_coupon_compact_v2.step` is the isolated V2 solid. These local archives do not save a new cloud version of the open Fusion document.
+
+
+## Compact holder fit trial V3
+
+V3 follows the physical report that switch pin tips sit 4 mm above V2's open receiver rim. It moves the compact holder 3 mm toward the switch, using local parameters only: top depth 6.8 mm and bottom depth 12 mm. The main carrier depths remain 9.8/15 mm. On that measurement, pin tips reach STL-local Z1 mm, near the two lower wire bore center heights 1.138835/1.172852 mm; actual electrical contact and switch body fit remain physical-test questions.
+
+`SwitchFitCoupon_Compact_V3` is at X175 mm. `LidSupportCoupon_Compact_V3` raises the bearing plane by the same normal shift, preserving the 0.2 mm nominal gap. Its vertical stems rise approximately 2.989 mm and shift Y by approximately -0.261 mm because of the 5-degree face. Four receiver channels move with the holder and retain 1.5 mm diameter. Guides, stops and pocket clearances otherwise match V2. Compact STL itself is unchanged; its original wire channels are segmented rather than full-width bores. The body channels provide access aligned to those existing entrances, not a new through-bore through the source holder.
+
+Print BOTH `cad/print/SwitchFitCoupon_Compact_V3.stl` (22 x 22 x 9.2 mm) and `cad/print/LidSupportCoupon_Compact_V3.stl` (22 x 22 x 18.832 mm). Both are oriented flat-side down in millimeters. Do not combine V3 with the old lid coupon. Confirm full switch seating, full holder seating against stops, pin engagement without bending, wire-entry access and support contact before printing a complete enclosure. Upper stops remain horizontal bridges; V3 did not change their support requirements.
+
+`macropad_compact_trial_v3.py` creates the separate pair; `verify_compact_v3_fusion.py` validates and exports it. Previous trial bodies and the main enclosure were preserved. Native validation passed healthy features, constrained sketches, two positive solids, no receiver/lid volumetric intersection, no sampled reference-mesh overlap with either solid (2,770 vertices and 5,568 triangle centroids each), and 256 unblocked wire-channel samples. Each isolated STEP contains one manifold solid; both printable STL meshes are closed with positive volume. See `exports/compact-v3-validation.json` and `exports/compact-v3-print-validation.json`. These sampled checks do not guarantee printed fit or electrical contact.
+
+The new local archive is `exports/macropad_compact_trial_v3.f3d`; the pre-change backup is `exports/macropad_before_compact_v3.f3d`. Isolated STEP files are `exports/switch_fit_coupon_compact_v3.step` and `exports/lid_support_coupon_compact_v3.step`. Native snapshots are `exports/compact-v3-receiver.png`, `exports/compact-v3-lid.png`, and `exports/compact-v3-assembled.png`. Standalone STEP rendering failed because OCP is unavailable; CAD Viewer is not installed. Visual review used the saved native Fusion snapshots. Local archive export does not save a new cloud version of the open document.
+
+
+## Compact holder fit trial V4 — one removable pin
+
+V4 removes the upper hotswap stops and the stepped compact pocket, leaving a 16 x 16 mm lower-switch clearance passage with the two lower notch guides. Holder depth remains 6.8/12 mm, matching V3; the V3 lid support coupon can be reused. Main enclosure and earlier trials are preserved. The original compact STL remains unchanged.
+
+Print BOTH `cad/print/SwitchFitCoupon_Compact_V4.stl` and `cad/print/Hotswap_MX_Compact_Pin_V4.stl`. The latter is a modified copy of the supplied compact holder. One smooth 1 mm diameter, 10 mm long mechanical wire pin enters from the front receiver wall, crosses the compact holder land and ends in the right notch guide. The shared bore is 1.2 mm diameter, at compact-local X4.3/Z1.6 mm, with a blind end at Y-0.2 mm. About 1.1 mm of the pin remains exposed. The mechanical pin is separate from the electrical contact wires and is not a printed part.
+
+Original contact channels remain segmented; four receiver channels follow their original axes. Test full switch flange seating, pin insertion/removal, holder retention and electrical wire access physically. Geometry checks do not establish actual switch fit or contact reliability. Native source: `macropad_compact_trial_v4.py`; validation/export: `verify_compact_v4_fusion.py`; print orientation: `prepare_compact_v4_meshes.py`. The live model suppresses the superseded two-pin features and restores their material.
+
+Exports are `exports/switch_fit_coupon_compact_v4.step`, `exports/hotswap_mx_compact_pin_v4.step`, and `exports/macropad_compact_trial_v4.f3d`. Validation reports and native Fusion snapshots have the `compact-v4-` prefix. Local archive export does not save a cloud version. Visual review uses native Fusion screenshots because standalone STEP rendering requires the unavailable OCP dependency and CAD Viewer is not installed.
+
+
+## Full middle carrier — compact V4
+
+The user physically tested `SwitchFitCoupon_Compact_V4.stl` and `Hotswap_MX_Compact_Pin_V4.stl` and confirmed the fit. All six receivers in `MiddleCarrier_Draft` now use that V4 geometry: a smooth 16 x 16 mm lower cavity, rounded side guides, four aligned wire channels and one 1.2 mm retaining-pin bore. Superseded spring snaps, upper stops and stepped pockets are suppressed. Holder top/bottom normal depths are 6.8/12 mm. The original compact holder STL is preserved.
+
+Use six copies of `cad/print/Hotswap_MX_Compact_Pin_V4.stl` and six smooth 1 mm metal retaining pins. Each pin needs a straight 10 mm working portion; allow extra external length if bending the exposed end. Bend only outside the receiver. The 3.6 mm partial withdrawal clearance passed geometric checks; unrestricted full-pin removal with every holder installed has not been established.
+
+Native validation passed for all six positions: no hotswap/pin intersections with the enclosure, 294 switch-cavity samples, 120 pin-path samples, 256 wire-path samples and 1,092 coupon-comparison samples per receiver. The static enclosure has no volumetric intersections, the active timeline is healthy, and sketches are constrained. Other native bodies retain their baseline volumes. Reports: `exports/carrier-v4-validation.json` and `exports/carrier-v4-print-validation.json`.
+
+The isolated `exports/middle_carrier_compact_v4.step` contains exactly one manifold solid named `MiddleCarrier_Draft`. `cad/print/MiddleCarrier_Compact_V4.stl` is oriented switch-face down on the bed, uses millimeters and has a 74.400 x 109.713 x 13.671 mm bounding box. Its edges are closed, signed volume is positive, and mesh volume differs from native CAD by approximately 0.012%. The local native archive is `exports/macropad_carrier_compact_v4.f3d`; exporting it does not save a cloud version.
+
+Visual review used `exports/carrier-v4-underneath.png` and `exports/carrier-v4-top.png`. The standalone STEP snapshot command failed because OCP is unavailable; CAD Viewer is not installed. Native Fusion geometry checks and saved native screenshots provided the fallback.
+
+### Remaining assembly work
+
+The lower cover support posts remain at the old 15 mm holder-bottom datum; the V4 holder bottom is 12 mm. They have not been raised or approved for a complete lid print. The V3 lid support coupon matches the new nominal height, but physical testing remains necessary. The rear USB opening is pending, and actual encoder, connectors, PCB and cable fit require assembly checks.
+
+Straight carrier extraction is obstructed: a vertical 3 mm drop overlaps the diffuser by approximately 0.239 mm3, while a 3 mm face-normal drop overlaps the upper shell by approximately 1.573 mm3. Do not assume either path is a valid service sequence. Resolve the assembly/removal order before final enclosure approval; PCB removal remains necessary for the previously identified rear-post obstruction. The current carrier STL is for a physical fit trial.

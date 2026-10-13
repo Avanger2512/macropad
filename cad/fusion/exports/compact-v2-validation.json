@@ -1,0 +1,12 @@
+{
+  "body": "SwitchFitCoupon_Compact_V2",
+  "volume_mm3": 1858.4322326674946,
+  "healthy_timeline": true,
+  "mesh_inside_vertex_samples": 0,
+  "mesh_inside_triangle_samples": 0,
+  "mesh_vertices_checked": 2770,
+  "mesh_triangles_checked": 5568,
+  "body_count": 7,
+  "reference_mesh_count": 1,
+  "unconstrained_sketches": []
+}

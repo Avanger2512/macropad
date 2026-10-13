@@ -1,0 +1,34 @@
+{
+  "revision": "V4",
+  "retention": "One front-entry transverse pin ending in side guide; no upper stops",
+  "pin_diameter_mm": 1.0,
+  "pin_bore_mm": 1.2,
+  "pin_count": 1,
+  "pin_reference_length_mm": 10.0,
+  "guide_blind_end_y_mm": -0.20000000000000004,
+  "local_pin_x_z_mm": [
+    4.3,
+    1.6
+  ],
+  "exposed_pin_length_mm": 1.1,
+  "holder_top_bottom_depth_mm": [
+    6.800000000000001,
+    12.000000000000002
+  ],
+  "receiver_lower_switch_clearance_samples": 294,
+  "pin_obstruction_samples": 0,
+  "wire_obstruction_samples": 0,
+  "pair_interferences": 0,
+  "healthy_timeline": true,
+  "unconstrained_sketches": [],
+  "volumes_mm3": {
+    "SwitchFitCoupon_Compact_V4": 954.0365943915355,
+    "HotswapCompact_Pin_V4": 276.5029440501315,
+    "MechanicalPin_1mm_REFERENCE_SINGLE": 7.853981633975046
+  },
+  "main_holder_depths_mm": [
+    9.8,
+    15.0
+  ],
+  "limits": "Actual switch fit, pin insertion force and electrical contact require physical test"
+}

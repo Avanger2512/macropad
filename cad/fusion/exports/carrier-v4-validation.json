@@ -1,0 +1,107 @@
+{
+  "revision": "Carrier compact V4",
+  "receivers": [
+    {
+      "name": "SW1",
+      "center_face_mm": [
+        15.499999999999998,
+        23.969640658742467
+      ],
+      "hotswap_and_pin_intersections": 0,
+      "switch_clearance_samples": 294,
+      "pin_path_samples": 120,
+      "wire_path_samples": 256,
+      "coupon_match_samples": 1092,
+      "pin_partial_withdrawal_mm": 3.6
+    },
+    {
+      "name": "SW2",
+      "center_face_mm": [
+        40.0,
+        23.969640658742467
+      ],
+      "hotswap_and_pin_intersections": 0,
+      "switch_clearance_samples": 294,
+      "pin_path_samples": 120,
+      "wire_path_samples": 256,
+      "coupon_match_samples": 1092,
+      "pin_partial_withdrawal_mm": 3.6
+    },
+    {
+      "name": "SW3",
+      "center_face_mm": [
+        64.5,
+        23.969640658742467
+      ],
+      "hotswap_and_pin_intersections": 0,
+      "switch_clearance_samples": 294,
+      "pin_path_samples": 120,
+      "wire_path_samples": 256,
+      "coupon_match_samples": 1092,
+      "pin_partial_withdrawal_mm": 3.6
+    },
+    {
+      "name": "SW4",
+      "center_face_mm": [
+        15.499999999999998,
+        48.46964065874246
+      ],
+      "hotswap_and_pin_intersections": 0,
+      "switch_clearance_samples": 294,
+      "pin_path_samples": 120,
+      "wire_path_samples": 256,
+      "coupon_match_samples": 1092,
+      "pin_partial_withdrawal_mm": 3.6
+    },
+    {
+      "name": "SW5",
+      "center_face_mm": [
+        40.0,
+        48.46964065874246
+      ],
+      "hotswap_and_pin_intersections": 0,
+      "switch_clearance_samples": 294,
+      "pin_path_samples": 120,
+      "wire_path_samples": 256,
+      "coupon_match_samples": 1092,
+      "pin_partial_withdrawal_mm": 3.6
+    },
+    {
+      "name": "SW6",
+      "center_face_mm": [
+        64.5,
+        48.46964065874246
+      ],
+      "hotswap_and_pin_intersections": 0,
+      "switch_clearance_samples": 294,
+      "pin_path_samples": 120,
+      "wire_path_samples": 256,
+      "coupon_match_samples": 1092,
+      "pin_partial_withdrawal_mm": 3.6
+    }
+  ],
+  "enclosure_intersections": 0,
+  "healthy_timeline": true,
+  "other_bodies_unchanged": true,
+  "unconstrained_sketches": [],
+  "removal_path_checks": [
+    {
+      "path": "vertical",
+      "first_obstruction": {
+        "body": "Diffuser_Draft",
+        "drop_mm": 3,
+        "intersection_mm3": 0.23929648741822754
+      }
+    },
+    {
+      "path": "face_normal",
+      "first_obstruction": {
+        "body": "UpperShell_Draft",
+        "drop_mm": 3,
+        "intersection_mm3": 1.5732787346721382
+      }
+    }
+  ],
+  "volume_mm3": 15686.194288100387,
+  "limits": "Straight carrier extraction is obstructed and requires assembly-sequence validation; bottom supports unchanged and untested; encoder, connectors, real PCB and complete wired removal require physical validation; USB opening pending"
+}
