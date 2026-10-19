@@ -3,7 +3,15 @@
 #include <cassert>
 #include <cstdint>
 #include "../macropad_test/InputLogic.h"
+#include "../macropad_test/BoardPins.h"
 int main() {
+  constexpr uint8_t physicalPins[] = {1, 2, 3, 6, 5, 4, 10};
+  static_assert(sizeof(BUTTON_PINS) == sizeof(physicalPins));
+  for (unsigned i = 0; i < sizeof(physicalPins); ++i) {
+    assert(BUTTON_PINS[i] == physicalPins[i]);
+    for (unsigned j = i + 1; j < sizeof(physicalPins); ++j)
+      assert(BUTTON_PINS[i] != BUTTON_PINS[j]);
+  }
   DebounceState b{true,true,0};
   auto r=debounce(b,false,100,20); assert(!r.changed);
   r=debounce(r.state,true,105,20); assert(!r.changed);

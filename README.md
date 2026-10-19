@@ -64,7 +64,7 @@ The [bill of materials](hardware/BOM.md) lists the prototype components and addi
 
 | Component | GPIO |
 |---|---|
-| SW1–SW6 | 1, 2, 4, 5, 6, 7 |
+| SW1–SW6 | 1, 2, 3, 6, 5, 4 |
 | Encoder CLK / DT / SW | 8 / 9 / 10 |
 | OLED SDA / SCL | 11 / 12 |
 | WS2812 DIN | 13 through 330 Ω |

@@ -1,10 +1,12 @@
 # ESP32-S3 SuperMini Test — Arduino Framework
 
-Open `macropad_test/macropad_test.ino` in Arduino IDE. Keep `InputLogic.h` next to the sketch. USB HID is not used; Serial runs over native USB CDC.
+Open `macropad_test/macropad_test.ino` in Arduino IDE. Keep `InputLogic.h` and `BoardPins.h` next to the sketch. USB HID is not used; Serial runs over native USB CDC.
+
+For the complete macOS build, upload, and USB recovery procedure, see [FLASHING.md](FLASHING.md).
 
 ## Pinned Build Dependencies
 
-- Boards Manager: **esp32 by Espressif Systems 3.3.12**.
+- Boards Manager: **esp32 by Espressif Systems 3.2.0** (October 19 hardware-verified build; earlier builds used 3.3.12).
 - Library Manager: **U8g2 by oliver 2.36.19**.
 - Library Manager: **Adafruit NeoPixel by Adafruit 1.15.5**.
 - `Wire`, `Arduino`, GPIO, and interrupts are included in the esp32 core.
@@ -40,7 +42,7 @@ The SuperMini name does not uniquely identify the memory size or type. The 4MB p
 
 | Device | GPIO / Power |
 |---|---|
-| SW1 / SW2 / SW3 / SW4 / SW5 / SW6 | 1 / 2 / 4 / 5 / 6 / 7 |
+| SW1 / SW2 / SW3 / SW4 / SW5 / SW6 | 1 / 2 / 3 / 6 / 5 / 4 |
 | Encoder CLK / DT / SW | 8 / 9 / 10 |
 | SH1106 SDA / SCL | 11 / 12 |
 | WS2812 DIN | 13 through 330 ohms |
@@ -50,6 +52,8 @@ The SuperMini name does not uniquely identify the memory size or type. The 4MB p
 
 Each switch connects its GPIO to GND; INPUT_PULLUP is enabled, and pressed = LOW. For a bare encoder, connect the common A/B terminal to GND; VCC applies to an encoder module. The display is configured specifically for SH1106 128×64, scanning addresses 0x3C and 0x3D.
 
+GPIO3 is used for SW3 on the assembled board (confirmed October 19, 2026). It is a strapping pin; test normal power-on with this button released. Button events include the GPIO number.
+
 ## Configurable Constants
 
 At the beginning of the sketch:
@@ -57,7 +61,7 @@ At the beginning of the sketch:
 - `LED_COUNT = 4`: change this to the actual number of external WS2812 LEDs. All configured LEDs show the same color. Their number cannot be detected automatically.
 - `LED_BRIGHTNESS = 32`: low brightness for testing.
 - `ENCODER_TRANSITIONS = 4`: if the counter changes once every two detents, try 2.
-- `ENCODER_DIRECTION = 1`: set to -1 to reverse the direction.
+- `ENCODER_DIRECTION = -1`: clockwise increases the position and counterclockwise decreases it on the assembled board. Set to 1 to reverse.
 - `DEBOUNCE_MS = 20`: button debounce filter. The encoder uses quadrature decoding that cancels reverse transitions caused by contact bounce, instead of a delay on each edge.
 
 ## Checks After Uploading
@@ -99,3 +103,7 @@ Build with Arduino CLI after installing the dependencies listed above:
 ```sh
 arduino-cli compile --fqbn 'esp32:esp32:esp32s3:USBMode=hwcdc,CDCOnBoot=cdc,UploadMode=default,FlashMode=dio,FlashSize=4M,PSRAM=disabled,PartitionScheme=default,CPUFreq=240,UploadSpeed=460800' macropad_test
 ```
+
+## USB Connection Recovery
+
+If the USB port is visible but Serial and esptool receive no data, follow the targeted libusb reset procedure in [FLASHING.md](FLASHING.md#5-recover-a-visible-usb-port-that-receives-no-data). This recovered the connection on October 19; the full upload and subsequent encoder update passed verification.

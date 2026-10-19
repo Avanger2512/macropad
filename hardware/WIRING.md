@@ -4,7 +4,7 @@ Numbers refer to GPIO identifiers, not physical pin positions. This wiring match
 
 | Component | Contact | Connection |
 |---|---|---|
-| SW1–SW6 | First contact | GPIO1, 2, 4, 5, 6, 7 respectively |
+| SW1–SW6 | First contact | GPIO1, 2, 3, 6, 5, 4 respectively |
 | SW1–SW6 | Second contact | GND |
 | Encoder | CLK / DT / SW | GPIO8 / GPIO9 / GPIO10 |
 | Encoder module | VCC / GND | 3V3 / GND |

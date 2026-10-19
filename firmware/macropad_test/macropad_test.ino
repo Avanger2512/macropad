@@ -4,14 +4,14 @@
 #include <U8g2lib.h>
 #include <Adafruit_NeoPixel.h>
 #include "InputLogic.h"
+#include "BoardPins.h"
 
-constexpr uint8_t BUTTON_PINS[] = {1, 2, 4, 5, 6, 7, 10};
 constexpr uint8_t CLK_PIN = 8, DT_PIN = 9, SDA_PIN = 11, SCL_PIN = 12, RGB_PIN = 13;
 constexpr uint16_t LED_COUNT = 4;  // Set to the actual number of external WS2812 LEDs.
 constexpr uint8_t LED_BRIGHTNESS = 32;
 constexpr uint32_t DEBOUNCE_MS = 20, DISPLAY_MS = 100;
 constexpr int8_t ENCODER_TRANSITIONS = 4;  // Try 2 if there is one event per two detents.
-constexpr int8_t ENCODER_DIRECTION = 1;  // Set -1 to reverse direction.
+constexpr int8_t ENCODER_DIRECTION = -1;  // Clockwise increases; counterclockwise decreases.
 static_assert(LED_COUNT > 0 && ENCODER_TRANSITIONS > 0, "Invalid configuration");
 
 U8G2_SH1106_128X64_NONAME_F_HW_I2C oled(U8G2_R0, U8X8_PIN_NONE, SCL_PIN, SDA_PIN);
@@ -80,7 +80,7 @@ void pollButtons(uint32_t now) {
     buttons[i] = next.state;
     if (!next.changed) continue;
     char event[32];
-    if (i < 6) snprintf(event, sizeof(event), "SW%u %s", i + 1, next.state.stable ? "UP" : "DOWN");
+    if (i < 6) snprintf(event, sizeof(event), "SW%u GPIO%u %s", i + 1, BUTTON_PINS[i], next.state.stable ? "UP" : "DOWN");
     else snprintf(event, sizeof(event), "ENC SW %s", next.state.stable ? "UP" : "DOWN");
     recordEvent(event);
     if (!next.state.stable) showColor(colors[i]);
@@ -129,6 +129,7 @@ void setup() {
   Serial.begin(115200); // Native USB CDC; no USB HID.
   const uint32_t started = millis();
   while (!Serial && uint32_t(millis() - started) < 1500) delay(1);
+  recordEvent("FW: assembled-map-v1");
   for (uint8_t i = 0; i < 7; ++i) {
     pinMode(BUTTON_PINS[i], INPUT_PULLUP);
     // A button held at boot produces DOWN after the debounce interval.

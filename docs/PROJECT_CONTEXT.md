@@ -18,6 +18,10 @@ The sections below distinguish the assembly confirmed by the user, the assistant
 - The user confirmed assembling the breadboard according to the wiring below and requested test firmware and verification.
 - First debug the electronics and firmware on the breadboard, then work on the enclosure.
 
+## Assembled Board Update — October 19, 2026
+
+Physical SW1–SW6 use GPIO1, 2, 3, 6, 5, 4 respectively. Press tests identified SW1/2/4/5/6; the user confirmed SW3 is wired to the pin marked 3. The earlier firmware did not poll GPIO3. GPIO7 is unused. This supersedes the breadboard assignment below.
+
 ## Recorded Breadboard Pin Assignment
 
 The numbers in the table are GPIO numbers, not physical pin positions.
