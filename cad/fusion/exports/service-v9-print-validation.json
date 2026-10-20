@@ -1,0 +1,14 @@
+{
+  "file": "/Users/denisbabiichuk/3dPrint/macropad/cad/print/UpperShell_Service_V9.stl",
+  "size_mm": [
+    80.0,
+    117.7227617627437,
+    36.92016921039442
+  ],
+  "volume_mm3": 43943.085069822584,
+  "cad_volume_mm3": 43947.78759835271,
+  "triangles": 3348,
+  "closed_edges": true,
+  "rotation_about_x_deg": 175,
+  "bed_z_mm": 0
+}

@@ -1,0 +1,14 @@
+{
+  "file": "/Users/denisbabiichuk/3dPrint/macropad/cad/print/UpperShell_Cover_Mounts_V7.stl",
+  "size_mm": [
+    80.0,
+    117.7227617627437,
+    36.92016945218418
+  ],
+  "volume_mm3": 43984.383978864505,
+  "cad_volume_mm3": 43988.19548103256,
+  "triangles": 3656,
+  "closed_edges": true,
+  "rotation_about_x_deg": 175,
+  "bed_z_mm": 0
+}

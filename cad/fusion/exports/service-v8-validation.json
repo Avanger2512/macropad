@@ -1,0 +1,44 @@
+{
+  "revision": "Service clearance V8",
+  "healthy_timeline": true,
+  "fully_constrained_sketches": true,
+  "connected_main_solids": 4,
+  "pairwise_intersections_mm3": 0,
+  "unchanged_carrier_cover_and_references": true,
+  "vertical_bare_carrier_path": {
+    "drop_mm": [
+      0,
+      40
+    ],
+    "step_mm": 0.25,
+    "poses": 161,
+    "against": [
+      "shell",
+      "diffuser"
+    ],
+    "max_overlap_mm3": 0
+  },
+  "volumes_mm3": {
+    "UpperShell_Draft": 43969.706654933594,
+    "MiddleCarrier_Draft": 15679.36765490686,
+    "BottomCover_Draft": 18214.370282509375,
+    "Diffuser_Draft": 2062.619318659798
+  },
+  "removed_mm3": {
+    "UpperShell_Draft": 18.488826098968275,
+    "Diffuser_Draft": 49.90868134019274
+  },
+  "encoder": {
+    "measured_bushing_diameter_mm": 7,
+    "measured_thread_length_mm": 7,
+    "shell_hole_diameter_mm": 7.4,
+    "shell_thickness_mm": 2.4,
+    "remaining_thread_before_nut_and_washer_mm": 4.6
+  },
+  "limits": [
+    "Sampled BRep path, not continuous swept-volume proof",
+    "PCB, encoder, switches, keycaps and wires not included in carrier path",
+    "Keycaps must be fitted after carrier installation",
+    "Real component footprints and cable insertion still need physical fit checks"
+  ]
+}

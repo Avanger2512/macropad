@@ -1,0 +1,21 @@
+{
+  "revision": "Cover mounts V7",
+  "healthy_timeline": true,
+  "fully_constrained_sketches": true,
+  "connected_main_solids": 4,
+  "pairwise_intersections_mm3": 0,
+  "other_bodies_unchanged": true,
+  "pcb_substrate_overlap_mm3": 0.0,
+  "insert_bore_clear_samples": 192,
+  "front_pillar_roof_connection": true,
+  "rear_gusset_material_samples": 18,
+  "rear_gusset_run_mm": 3.700000000000001,
+  "rear_gusset_top_z_mm": 13.184147624945826,
+  "rear_gusset_angle_above_print_bed_deg": 50,
+  "shell_volume_mm3": 43988.19548103256,
+  "pending": [
+    "Actual component and wire footprints near rear gussets",
+    "Slicer overhang review; no entire-shell supportless claim",
+    "Previously unresolved carrier extraction sequence"
+  ]
+}

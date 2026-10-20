@@ -1,0 +1,112 @@
+{
+  "revision": "V7 preprint native assembly audit",
+  "removal": {
+    "vertical": {
+      "shell": {
+        "first_collision": {
+          "drop_mm": 20,
+          "volume_mm3": 0.7189261926617123
+        },
+        "maximum_sampled_overlap_mm3": 2.7048825025280125,
+        "colliding_samples_mm": [
+          20,
+          25
+        ]
+      },
+      "diffuser": {
+        "first_collision": {
+          "drop_mm": 2.5,
+          "volume_mm3": 0.23608203745664622
+        },
+        "maximum_sampled_overlap_mm3": 0.23929648741822754,
+        "colliding_samples_mm": [
+          2.5,
+          3
+        ]
+      }
+    },
+    "face_normal": {
+      "shell": {
+        "first_collision": {
+          "drop_mm": 2.5,
+          "volume_mm3": 0.3955307806097311
+        },
+        "maximum_sampled_overlap_mm3": 577.411519904462,
+        "colliding_samples_mm": [
+          2.5,
+          3,
+          4,
+          5,
+          6,
+          8,
+          10,
+          15,
+          20,
+          25,
+          30
+        ]
+      },
+      "diffuser": {
+        "first_collision": null,
+        "maximum_sampled_overlap_mm3": 0,
+        "colliding_samples_mm": []
+      }
+    },
+    "diffuser_inward_without_carrier": {
+      "first_collision": null
+    },
+    "carrier_with_diffuser_removed_direction_samples": [
+      {
+        "dy_per_downward_mm": -0.2,
+        "shell_first_collision": {
+          "drop_mm": 2,
+          "volume_mm3": 0.8708535397120198
+        }
+      },
+      {
+        "dy_per_downward_mm": -0.1,
+        "shell_first_collision": {
+          "drop_mm": 2.5,
+          "volume_mm3": 0.10968763593457122
+        }
+      },
+      {
+        "dy_per_downward_mm": -0.05,
+        "shell_first_collision": {
+          "drop_mm": 5,
+          "volume_mm3": 0.10968763593457122
+        }
+      },
+      {
+        "dy_per_downward_mm": 0,
+        "shell_first_collision": {
+          "drop_mm": 20,
+          "volume_mm3": 0.7189261926617123
+        }
+      },
+      {
+        "dy_per_downward_mm": 0.05,
+        "shell_first_collision": {
+          "drop_mm": 5,
+          "volume_mm3": 1.242788828401501
+        }
+      },
+      {
+        "dy_per_downward_mm": 0.1,
+        "shell_first_collision": {
+          "drop_mm": 2.5,
+          "volume_mm3": 1.2427888284019508
+        }
+      },
+      {
+        "dy_per_downward_mm": 0.2,
+        "shell_first_collision": {
+          "drop_mm": 2,
+          "volume_mm3": 6.313877168091307
+        }
+      }
+    ]
+  },
+  "sampled_only": true,
+  "hardware_removed_for_path_check": true
+}

@@ -23,3 +23,23 @@ Components of the current prototype and the saved test firmware configuration. P
 ## Additional parts recommended in the original instructions
 
 A 470–1000 µF capacitor between RGB 5 V and GND, and a 74AHCT125 or 74HCT245 level shifter for DIN. Their presence in the current prototype is not confirmed. See the [original instructions](../firmware/README.md).
+
+## Confirmed enclosure fasteners and print setup (2026-10-20)
+
+- Heat-set inserts: M2 thread, 4 mm length, 3.5 mm outside diameter; eight total
+  (four carrier mounts and four independent bottom-cover mounts).
+- CAD insert pilots: 3.2 mm diameter, 4.5 mm depth. Physical heat-set fit remains
+  to be checked in the selected PLA Matte.
+- Bottom-cover screws: measured cylindrical socket heads, 4 mm diameter and
+  2 mm height. M2 x 6 mm (length below head) is the nominal cover candidate:
+  the 2 mm cover leaves approximately 4 mm inside the insert. Confirm actual
+  seating and engagement after installing the inserts.
+- The current cover has no head recess. Feet must stand higher than the 2 mm
+  screw-head projection; approximately 3 mm rubber feet are a candidate, with
+  at least 2.5 mm effective installed height.
+- Printer stated by user: Bambu Lab X2D; 0.4 mm nozzle; gray PLA Matte. No sliced
+  job or printer profile was generated or verified during the geometry audit.
+- Encoder threaded bushing measured by user: 7 mm diameter, 7 mm threaded length.
+  V8 upper-shell opening is 7.4 mm, with a 2.4 mm shell wall and 4.6 mm remaining
+  thread before allowance for the washer and nut. Actual encoder body/shaft and
+  push clearance still require assembly checks.

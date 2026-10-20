@@ -1,0 +1,41 @@
+[
+  {
+    "file": "MiddleCarrier_Through_Pin_V5.stl",
+    "triangles": 14748,
+    "size_mm": [
+      74.3999969959259,
+      109.71290086851404,
+      13.67067196071631
+    ],
+    "volume_mm3": 15681.284367220474,
+    "closed_edges": true,
+    "bed_z_mm": 0,
+    "rotation_about_x_deg": 175.0
+  },
+  {
+    "file": "SwitchFitCoupon_Through_Pin_V5.stl",
+    "triangles": 2484,
+    "size_mm": [
+      22.0,
+      22.000001320558596,
+      9.200001255117499
+    ],
+    "volume_mm3": 952.9256992204349,
+    "closed_edges": true,
+    "bed_z_mm": 0,
+    "rotation_about_x_deg": 175.0
+  },
+  {
+    "file": "Hotswap_MX_Through_Pin_V5.stl",
+    "triangles": 7050,
+    "size_mm": [
+      11.031478881835938,
+      10.572205042273783,
+      5.200003881183726
+    ],
+    "volume_mm3": 291.19425887023743,
+    "closed_edges": true,
+    "bed_z_mm": 0,
+    "rotation_about_x_deg": -5.0
+  }
+]

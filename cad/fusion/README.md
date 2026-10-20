@@ -1,5 +1,10 @@
 # Native Fusion enclosure draft
 
+**Current enclosure: V9.** Native assembly: `exports/macropad_service_v9.f3d`
+and `exports/macropad_service_v9.step`. Use the V9 shell with the V6 cover,
+V8 diffuser and already printed V5 carrier. The sections below retain the
+design history; see the final V9 section for the latest checks and exports.
+
 The editable model is in the active Fusion Part Design document named `macropad`. Four enclosure bodies and two auxiliary trial bodies are in the same document:
 
 - `UpperShell_Draft`: inclined exterior shell with six trim openings, OLED window, provisional encoder opening, diffuser opening, four carrier insert bosses, and four independent bottom-cover insert bosses.
@@ -169,3 +174,183 @@ Visual review used `exports/carrier-v4-underneath.png` and `exports/carrier-v4-t
 The lower cover support posts remain at the old 15 mm holder-bottom datum; the V4 holder bottom is 12 mm. They have not been raised or approved for a complete lid print. The V3 lid support coupon matches the new nominal height, but physical testing remains necessary. The rear USB opening is pending, and actual encoder, connectors, PCB and cable fit require assembly checks.
 
 Straight carrier extraction is obstructed: a vertical 3 mm drop overlaps the diffuser by approximately 0.239 mm3, while a 3 mm face-normal drop overlaps the upper shell by approximately 1.573 mm3. Do not assume either path is a valid service sequence. Resolve the assembly/removal order before final enclosure approval; PCB removal remains necessary for the previously identified rear-post obstruction. The current carrier STL is for a physical fit trial.
+
+
+## Through-pin correction V5 — current retention design
+
+V4 used a short positive-Y bore and a blind receiver guide. Although its printed seating fit was confirmed, this did not meet the intended full-through retention. Do not use V4's 10 mm pin or front-entry instructions for V5. The earlier files and archives remain historical references.
+
+V5 uses one transverse pin along local X, passing through the left receiver wall, the entire holder width and the right receiver wall. Its axis is local Y+2.8 mm, Z1.6 mm above the holder bottom. The bore is 1.2 mm; the metal pin is 1 mm with a nominal 20 mm straight section, spanning the 18.4 mm receiver and leaving 0.8 mm exposed at either side. Any bent end must be outside the receiver; allow extra length for that bend. There is no blind stop at a guide.
+
+Simply extending the old Y-direction bore would cross the lower electrical contact channels. The X-direction axis avoids those channels and the two guides. It also clears an assumed 2 mm-radius central MX post envelope by 0.2 mm at the bore edge; actual switch fit requires a new physical trial. A reinforcement land covers local X +/-5.2 mm, Y2.7..4.2 mm and Z0.2..3 mm, adding material around the new holder bore. The holder dimensions are now approximately 11.031 x 10.572 x 5.200 mm. All original electrical wire-channel axes are preserved. Old blind bores and the old short reference pin are suppressed. Native V4 body names remain for lineage, but current geometry is V5; file names and validation reports identify the revision.
+
+Native validation passed 2,424 full-bore clearance samples in each of seven positions (coupon plus six carrier receivers), both-wall engagement, holder material on both sides of the bore, intact coupon guides, healthy active timeline and fully constrained sketches. Native Boolean intersections found no holder/pin overlap with the static enclosure. The minimum conservative gap to an electrical channel is 1.143 mm; guide-to-bore gap is 1.45 mm. Other enclosure bodies retain their baseline volumes. Reports: `exports/through-pin-v5-validation.json` and `exports/through-pin-v5-print-validation.json`.
+
+Each V5 STEP contains exactly one manifold solid. All three prepared STL meshes have closed edge counts, positive signed volumes and CAD/STL volume differences below 0.2%. Print files are `cad/print/SwitchFitCoupon_Through_Pin_V5.stl`, `cad/print/Hotswap_MX_Through_Pin_V5.stl` and `cad/print/MiddleCarrier_Through_Pin_V5.stl`. First print the small coupon and one holder together, checking straight-pin passage, switch seating and contact-wire routing. Only then use the complete carrier and six holders. Receiver and carrier are switch-face down on the bed; holder is bottom-face down. Preserve millimeters and 100% scale.
+
+Native source is `macropad_through_pin_v5.py`, validation/export is `verify_through_pin_v5.py`, and mesh preparation is `prepare_through_pin_v5_meshes.py`. Isolated STEP files have the `through_pin_v5` suffix. The native archive is `exports/macropad_through_pin_v5.f3d`; `exports/macropad_before_through_pin_v5.f3d` preserves V4. Local archive export does not save a cloud version. Native views are `exports/through-pin-v5-holder.png` and `exports/through-pin-v5-assembled.png`. Standalone STEP snapshot rendering failed because OCP is unavailable, and CAD Viewer is not installed; visual review used the native Fusion views.
+
+The previously discovered carrier-removal obstructions remain unresolved. Full pin withdrawal with all neighboring pins/holders installed is unverified; do not assume independent service access. Bottom-cover supports remain unchanged and require adaptation/testing, and the USB opening is pending. The V5 outputs are for a new physical fit trial, not final enclosure approval.
+
+## Enclosure finishing V6 — historical shell and current cover
+
+The user confirmed the printed V5 carrier, installed switches/hotswap holders and
+PCB mounting fit. V6 preserves the carrier and diffuser geometry, the original
+5-degree face angle, and all four cover fastenings.
+
+`macropad_enclosure_finish_v6.py` incrementally suppresses the 36 old cover-support
+features (12 contacts plus stems/cap cuts), leaving a flat 2 mm cover. It adds a
+14 x 10 mm rear USB throat at X39/Z15.2, a 0.5 mm entry chamfer, 0.8 mm exterior
+shell top/corner chamfers and a 0.8 mm underside cover perimeter chamfer. USB plug
+moulding measured 11 x 7 mm; the throat provides 1.5 mm clearance per side. Actual
+plug reach into the recessed connector still requires physical checking.
+
+Two 3 mm tool-access holes are at BOOT X44/Y102.2 and RESET X35/Y102.2. User board
+measurements were 31 mm from one width edge to BOOT, 30 mm from the other to RESET,
+9 mm center spacing and 10 mm from the rear wide edge. The component-side board
+left is mirrored into the assembly consistently with the existing USB datum.
+These are access bores in the cover, not printed plungers or tool guides. Check
+straight tool access and button identification on the installed board.
+
+Native verification in `verify_enclosure_finish_v6.py` passed four connected
+positive solids, healthy active timeline, constrained sketches, all six pairwise
+Boolean intersection checks, 125 USB-throat samples and 96 service-bore samples.
+Carrier, diffuser and reference-body volumes are unchanged from the pre-V6
+baseline. See `exports/enclosure-v6-validation.json`.
+
+A rigid-assembly feasibility study found that 3 degrees with rear roof height
+retained would raise the front roof from 29 to approximately 33.020 mm and leave
+approximately 1.819 mm under the conservative 17 mm component envelope above a
+flat Z2 lid. Holding the front height instead would produce 2.200 mm interference
+with that lid. This is an envelope calculation using native parameter values,
+not a validated alternate enclosure: rigid rotation changes the footprint and
+lower seams, and requires lower-shell/cover redesign. No tilt change was applied.
+
+Sources: `macropad_enclosure_finish_v6.py`, `verify_enclosure_finish_v6.py`,
+`prepare_enclosure_v6_meshes.py`. Backup: `exports/macropad_before_enclosure_finish_v6.f3d`.
+Execute V6 stages individually when recovering from an interrupted run; a failed
+Fusion MCP script rolls back its native transaction but filesystem exports can
+remain. Reinitialization verifies original body volumes before reusing a backup.
+
+Remaining assembly work: actual cable insertion and button tool-reach tests,
+encoder bushing/knob fit, OLED/diffuser physical fit, wire routing, lid screw-head
+recesses or feet, and the previously obstructed carrier extraction sequence.
+
+V6 deliverables are `exports/macropad_enclosure_finish_v6.step` (four manifold
+solids), `exports/macropad_enclosure_finish_v6.f3d`, and the isolated one-solid
+`exports/upper_shell_finish_v6.step` / `exports/bottom_cover_finish_v6.step`.
+Print meshes are `cad/print/UpperShell_Finish_V6.stl` (roof-face down) and
+`cad/print/BottomCover_Finish_V6.stl` (underside down), in millimeters. Both have
+closed edge counts, positive volumes and native/STL volume differences below
+0.005%; see `exports/enclosure-v6-print-validation.json`. Shell print-pose bounds
+are approximately 80 x 117.723 x 36.920 mm; cover is 80 x 115 x 2 mm.
+Review overhangs and fasteners in the slicer before printing.
+
+Saved native Fusion snapshots are `exports/enclosure-v6-rear.png` and
+`exports/enclosure-v6-bottom.png`; both were reviewed. Standalone STEP snapshot
+rendering was attempted but failed because OCP is unavailable. CAD Viewer is not
+installed, so native Fusion and these snapshots provide the visual handoff.
+The archive export does not save a cloud version of the active document.
+
+## Cover mounts V7 — historical upper shell
+
+The user requested roof-connected lower-cover mounts to avoid support beneath
+short bosses when printing the shell roof-down. V7 extends the two front 6 mm
+bosses at X20/60,Y4.8 to the inner roof, retaining their original insert entries.
+Full-height rear cylinders would cross the installed PCB substrate, so the rear
+bosses instead gain wall-connected triangular gussets at X17..23 and X57..63,
+Y109..112.7. The gussets have a 55-degree world slope, approximately 50 degrees
+above the print bed with the existing 5-degree roof-down print pose. Their top
+is Z13.184 mm. This addresses the lower-cover mounts; it is not a claim that
+all shell features can be printed without support.
+
+The carrier, lower cover, diffuser, USB opening, service holes and fastener axes
+are unchanged from V6. Reuse the existing V5 carrier and V6 cover. Native checks
+passed four connected solids, healthy active features, constrained sketches,
+no pairwise enclosure intersections, no shell overlap with the nominal
+70 x 50 x 1.6 mm PCB substrate, 192 clear insert-bore samples, both front roof
+connections and 18 rear-gusset material samples. The new shell volume is
+43988.195 mm3. See `exports/cover-mounts-v7-validation.json`.
+
+Actual downward-facing component and wire footprints around the rear gussets
+are not fully modeled; these still require a physical clearance check. The
+previously obstructed carrier extraction sequence also remains unresolved.
+Source: `macropad_cover_mounts_v7.py`; verification/export:
+`verify_cover_mounts_v7.py`. Pre-change archive:
+`exports/macropad_before_cover_mounts_v7.f3d`.
+
+V7 exports: `exports/upper_shell_cover_mounts_v7.step` (one manifold solid),
+`exports/macropad_cover_mounts_v7.step` (four manifold solids), and
+`exports/macropad_cover_mounts_v7.f3d`. Print `cad/print/UpperShell_Cover_Mounts_V7.stl`
+with the roof down, at 100% millimeter scale; reuse `BottomCover_Finish_V6.stl`.
+The prepared shell mesh is closed with positive volume and differs from native
+CAD volume by approximately 0.009%; see `exports/cover-mounts-v7-print-validation.json`.
+The native interior snapshot `exports/cover-mounts-v7-interior.png` was reviewed.
+Standalone STEP rendering again failed because OCP is unavailable; CAD Viewer is
+not installed. Native Fusion geometry checks and its saved snapshot are the
+fallback. The F3D export does not save a cloud version of the document.
+
+## V8 pre-print audit and service-clearance correction — superseded by V9
+
+The user will retain the physically printed V5 middle carrier. V8 does not
+change its geometry or the V6 lower cover. Additional sampled native checks
+found two installation obstructions in V7 that static fit checks had missed:
+rear gusset corners during vertical drops of 20–25 mm, and the hidden rear
+diffuser edge during drops of 2.5–3 mm. `macropad_service_clearance_v8.py` clips
+the gussets to the original 6 mm boss envelope without cutting the rear wall,
+and limits the rear diffuser edge to global Y101.55 mm. Removed diffuser material
+is entirely at normal depths 2.4–6 mm; its visible plug and 0.8 mm optical skin
+are unchanged. A sampled path now passes 161 positions, Z drop 0–40 mm at 0.25 mm
+steps, against both shell and installed diffuser. This tests the bare carrier;
+PCB, switches, keycaps, encoder and wires are excluded. Install keycaps afterward.
+
+Measured encoder threaded bushing is 7 mm diameter with 7 mm threaded length.
+The upper-shell opening is now 7.4 mm; the 2.4 mm wall leaves 4.6 mm for washer,
+nut and exposed thread. Encoder body/shaft fit and push travel remain physical
+checks. Updating this parameter was verified to leave all other bodies unchanged.
+
+Native `verify_service_clearance_v8.py` checks healthy features, constrained
+sketches, four connected positive solids, zero pairwise overlaps, original
+insert seats/bores and unchanged carrier, cover and references. Final files:
+`exports/macropad_service_v8.step` (four manifold solids),
+`exports/macropad_service_v8.f3d`, plus isolated `upper_shell_service_v8.step`
+and `diffuser_service_v8.step`. Reports: `exports/service-v8-validation.json`,
+`exports/service-v8-diffuser-trim.json`, `exports/service-v8-print-validation.json`,
+`exports/preprint-v8-mesh-audit.json`. Historical V7 audit:
+`exports/preprint-v7-assembly-audit.json`.
+
+Use `cad/print/UpperShell_Service_V8.stl`, `cad/print/Diffuser_Service_V8.stl` and
+unchanged `cad/print/BottomCover_Finish_V6.stl`; no middle-carrier reprint.
+Both new meshes are watertight with positive volume and CAD volume difference
+below 0.01%. They are already face-down on the bed in millimeters. The USB roof
+still spans a 14 mm bridge; inspect support/bridge toolpaths in the actual slicer.
+The rear gussets slope 50 degrees above the print bed. No sliced job was produced.
+
+`exports/service-v8-interior.png` was reviewed in native Fusion. Standalone STEP
+snapshot rendering failed because OCP is unavailable; CAD Viewer is not installed.
+Native Fusion geometry and saved snapshots are the fallback. F3D export does not
+save a cloud version of the active document.
+
+## V9 front gusset cleanup — current upper shell
+
+At the user's request, the two original `Front cover support 1/2 45 degree gusset`
+features are suppressed. The roof-connected front pillars already replace their
+load path. Rear clipped gussets remain necessary under the short rear bosses.
+The printed V5 middle carrier, V6 cover and V8 diffuser remain unchanged.
+Source: `macropad_front_gusset_cleanup_v9.py`. The shared V8 verifier now accepts
+an output tag and baseline filename so V9 verification/exports preserve V8 files.
+V9 checks both roof-connected pillars before running the full static and sampled
+161-position bare-carrier path checks. Files use the `service_v9` suffix; print
+`UpperShell_Service_V9.stl` with the unchanged V6 cover and V8 diffuser.
+
+V9 native validation passed four connected solids, constrained sketches, healthy
+features, both front roof connections, zero static overlaps and all 161 sampled
+bare-carrier positions. Native body volumes confirm the middle, lid and diffuser
+unchanged. `exports/service-v9-validation.json` records these checks. The V9 shell
+STL is closed with positive volume and approximately 0.011% difference from CAD;
+see `exports/service-v9-print-validation.json`. The one-solid shell STEP and
+four-solid assembly STEP passed solid-count checks. Native snapshot
+`exports/service-v9-interior.png` was reviewed. Standalone STEP rendering failed
+because OCP is unavailable; CAD Viewer remains unavailable, so native Fusion is
+the viewer. `cad/print/Macropad_Print_Set_V9.zip` contains the current shell and
+unchanged lid/diffuser with print notes.

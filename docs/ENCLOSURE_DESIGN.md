@@ -152,3 +152,115 @@ Receivers are integral to the middle carrier. External snap hooks retain the exi
 Do not center the holder bounding box on the switch: the supplied mesh central cylinder is at X−0.08972306/Y+1.49765268 mm. Place holder-local origin at switch center plus X+0.08972306/Y−1.49765268 mm. The cylinder is interpreted as the switch center-post reference and must be checked in the one-button coupon. Preserve the holder orientation across all six pockets.
 
 Verified mesh plastic bearing lands: bottom X±2.5/Y−1.2 mm, 1 × 3 mm per lid contact; top X±3/Y+4.3 mm, 1 × 0.6 mm per upper contact; snap contact bands X±5.215..5.515, Y2.7..4.7 mm at the bottom face. Contact holes elsewhere make generic edge supports unsuitable. The measured 7 mm flange offset sets holder top normal depth 9.8 mm and bottom 15 mm. Physical PLA flex, actual pin alignment, wire clearance and print support choices remain trial checks.
+
+## Physical assembly feedback and enclosure finishing — 2026-10-20
+
+The user printed the current middle carrier, installed the switches in the
+hotswap holders, and confirmed that the PCB mounting fits. Preserve that printed
+carrier and its mounting geometry in subsequent enclosure revisions.
+
+Requested next changes:
+
+- Remove the twelve obsolete bottom-cover holder contact posts, including their
+  reinforced stems and inclined cap cuts. Preserve the four bottom-cover screw
+  fastenings. The transverse retaining pins now retain the holders.
+- Add direct rear USB access. Current documented connector center is X39/Z15.2 mm;
+  the rear board edge is Y112.2 mm against exterior Y115 mm. The opening must pass
+  the cable plug moulding through at least 2.8 mm of recess. Actual plug width,
+  height and shoulder/insertion reach remain to be measured before final sizing.
+- Add exterior chamfers, initially targeting 0.8 mm on safe outer edges and
+  0.3–0.5 mm on the USB entry. Preserve functional seats and mating faces; validate
+  remaining wall thickness and native feature health after selecting edges.
+- Evaluate a smaller operating tilt while preserving the printed carrier. Do not
+  simply change `caseTilt`: the carrier has horizontal PCB mounts and channel
+  sketches constrained at the original evaluated pose. Consider rigid rotation
+  of the installed assembly and adaptation of the lower shell/cover instead.
+
+At 115 mm depth, reducing 5 degrees to 3 degrees changes the nominal exterior
+height difference from 10.061 to 6.027 mm. Existing documented component clearance
+above the lid is only 1.7 mm (component envelope bottom Z3.7, lid top Z2). Thus a
+roughly 4 mm rear lowering cannot be assumed to fit. Retaining rear height and
+raising the front is a candidate; exact minimum clearance requires a transformed
+hardware-envelope check in Fusion.
+
+Other open items: encoder bushing and knob dimensions, OLED/diffuser physical fit,
+wire bends, screw-head recesses or feet, and the service removal sequence. Earlier
+sampled carrier extraction checks found obstructions; physical carrier/PCB fit
+confirmation does not establish the complete extraction path.
+
+Execution status: no enclosure geometry has been changed in this session. The
+configured Fusion MCP server exposed its script API, but the active-model
+inspection request timed out. No new STEP/STL/F3D or geometry validation results
+were produced. The above dimensions are from existing project records, not a live
+measurement of the currently open Fusion document.
+
+### V6 implementation and native validation
+
+Fusion MCP connectivity was restored through the configured localhost endpoint.
+V6 now removes all twelve lid support posts and their stems, adds the rear
+14 x 10 mm USB throat with 0.5 mm entry chamfer, and applies 0.8 mm exterior
+chamfers to the shell top/corners and the underside perimeter of the cover.
+The printed V5 carrier and PCB mounting geometry remain unchanged.
+
+User button measurements define BOOT X44/Y102.2 and RESET X35/Y102.2 in enclosure
+coordinates, both with 3 mm through holes in the bottom cover. This follows the
+same mirrored component-side board datum as USB: 31 mm to BOOT from original
+board-left, 30 mm to RESET from the opposite edge, 9 mm between centers, and
+10 mm from the rear 70 mm board edge. Physical reach through the bores remains
+an assembly check.
+
+Native Fusion validation passed healthy active features, constrained sketches,
+four connected solids, no pairwise solid overlaps, 125 unobstructed USB-throat
+samples and 96 unobstructed service-bore samples. Carrier, diffuser and reference
+body volumes match the pre-change baseline. Report:
+`cad/fusion/exports/enclosure-v6-validation.json`.
+
+For a rigidly repositioned assembly at 3 degrees, retaining rear roof height
+raises the front roof to 33.020 mm and gives a conservative component/lid gap of
+1.819 mm. Retaining front height instead produces a negative gap of -2.200 mm.
+These are feasibility estimates, requiring lower-shell/cover and footprint
+adaptation before a smaller-angle variant can be approved. V6 retains 5 degrees.
+
+### V7 lower-cover mounting supports
+
+Two front cover bosses now extend to the internal roof while preserving the
+6 mm diameter, existing axes, lower seating faces and insert pilots. The printed
+carrier is unchanged. Rear full-height posts would intersect the PCB substrate;
+rear wall-connected 55-degree gussets replace that idea at the existing rear
+bosses. Their slope is approximately 50 degrees above the bed with the shell
+roof-down and their maximum Z is 13.184 mm.
+
+Native validation confirms no enclosure-body intersections or intersection with
+the nominal PCB substrate. Actual downward-facing components/wires still need
+checking near X17..23/57..63,Y109..112.7. This revision targets support beneath the
+cover mounts, not every overhang in the shell. The V6 lower cover remains valid.
+
+### Pre-print audit and V8 corrections
+
+The V5 printed middle carrier must not be changed or reprinted. V8 retains that
+body exactly through targeted shell/diffuser operations and confirms its original
+native volume; the lower cover remains V6. V7 gusset corner interference during
+installation was resolved by clipping gussets inside the existing 6 mm cylindrical
+boss envelope. A 0.355 mm maximum trim of the hidden rear diffuser flange/skirt
+clears the other installation obstruction. The removed diffuser material lies
+at normal depths 2.4–6 mm, leaving the optical skin and visible plug unchanged.
+The bare carrier now passes 161 sampled vertical placements through 40 mm.
+Fully populated hardware and wiring are outside this path check.
+
+The encoder bushing is measured as diameter 7 mm, threaded length 7 mm. Only the
+upper hole changes to 7.4 mm for diametral print clearance. The printed middle
+and its mounting do not change.
+
+Remaining checks before the large print: physical insert seating, OLED/glass
+registration, encoder push/knob envelope, actual rear component/wire clearance,
+USB plug insertion reach and BOOT/RESET tool access. Inspect the 14 mm USB roof
+bridge in the printer's slicer. The chosen insert is M2 x L4 x OD3.5 mm; eight
+are used. A nominal M2 x 6 mm screw leaves 4 mm engagement through the 2 mm lid.
+User screw heads are diameter 4 x height 2 mm, so add feet with more than 2 mm
+installed clearance if keeping the unrecessed lid.
+
+Low-risk visual improvements: gray matte shell with a light/translucent diffuser,
+a matching dark encoder knob, four hidden rubber feet and small underside
+BOOT/RESET marks after verifying button identity. A locating lip for a more
+consistent cover seam is a future option, requiring its own fit check. Large
+corner changes and new electronics seats are deferred until physical assembly.

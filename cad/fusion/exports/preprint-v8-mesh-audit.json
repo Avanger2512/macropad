@@ -1,0 +1,304 @@
+{
+  "parts": [
+    {
+      "file": "cad/print/UpperShell_Service_V8.stl",
+      "triangles": 3720,
+      "bounds": [
+        [
+          0.0,
+          80.0
+        ],
+        [
+          0.0,
+          117.72276306152344
+        ],
+        [
+          0.0,
+          36.920169830322266
+        ]
+      ],
+      "dimensions": [
+        80.0,
+        117.72276306152344,
+        36.920169830322266
+      ],
+      "bed_contact_area": 5999.209325200063,
+      "overhangs": {
+        "0": {
+          "area": 0,
+          "triangles": 0
+        },
+        "30": {
+          "area": 26.71302162881713,
+          "triangles": 8
+        },
+        "45": {
+          "area": 26.71302162881713,
+          "triangles": 8
+        },
+        "50": {
+          "area": 78.31615120485586,
+          "triangles": 98
+        },
+        "55": {
+          "area": 114.39054396474732,
+          "triangles": 170
+        }
+      },
+      "risky_regions_10mm_bins": [
+        {
+          "xy_bin": [
+            40,
+            0
+          ],
+          "area": 26.60001849570387,
+          "zrange": [
+            28.542198181152344,
+            28.707794189453125
+          ],
+          "triangles": 2
+        },
+        {
+          "xy_bin": [
+            60,
+            10
+          ],
+          "area": 0.05650161659288555,
+          "zrange": [
+            30.420066833496094,
+            30.426170349121094
+          ],
+          "triangles": 3
+        },
+        {
+          "xy_bin": [
+            20,
+            10
+          ],
+          "area": 0.05650151652037301,
+          "zrange": [
+            30.420066833496094,
+            30.426170349121094
+          ],
+          "triangles": 3
+        }
+      ],
+      "nonmanifold_edges": 0,
+      "components": [
+        {
+          "triangles": 3720,
+          "minZ": 0.0
+        }
+      ]
+    },
+    {
+      "file": "cad/print/BottomCover_Finish_V6.stl",
+      "triangles": 908,
+      "bounds": [
+        [
+          0.0,
+          80.0
+        ],
+        [
+          0.0,
+          115.0
+        ],
+        [
+          0.0,
+          2.0
+        ]
+      ],
+      "dimensions": [
+        80.0,
+        115.0,
+        2.0
+      ],
+      "bed_contact_area": 8859.959143691194,
+      "overhangs": {
+        "0": {
+          "area": 0,
+          "triangles": 0
+        },
+        "30": {
+          "area": 0,
+          "triangles": 0
+        },
+        "45": {
+          "area": 0,
+          "triangles": 0
+        },
+        "50": {
+          "area": 0,
+          "triangles": 0
+        },
+        "55": {
+          "area": 0,
+          "triangles": 0
+        }
+      },
+      "risky_regions_10mm_bins": [],
+      "nonmanifold_edges": 0,
+      "components": [
+        {
+          "triangles": 908,
+          "minZ": 0.0
+        }
+      ]
+    },
+    {
+      "file": "cad/print/Diffuser_Service_V8.stl",
+      "triangles": 60,
+      "bounds": [
+        [
+          0.0,
+          69.60000610351562
+        ],
+        [
+          0.0,
+          12.558296203613281
+        ],
+        [
+          0.0,
+          6.000000476837158
+        ]
+      ],
+      "dimensions": [
+        69.60000610351562,
+        12.558296203613281,
+        6.000000476837158
+      ],
+      "bed_contact_area": 639.3600601816257,
+      "overhangs": {
+        "0": {
+          "area": 234.6973233061741,
+          "triangles": 8
+        },
+        "30": {
+          "area": 234.6973233061741,
+          "triangles": 8
+        },
+        "45": {
+          "area": 234.6973233061741,
+          "triangles": 8
+        },
+        "50": {
+          "area": 234.6973233061741,
+          "triangles": 8
+        },
+        "55": {
+          "area": 234.6973233061741,
+          "triangles": 8
+        }
+      },
+      "risky_regions_10mm_bins": [
+        {
+          "xy_bin": [
+            20,
+            10
+          ],
+          "area": 52.200070953375615,
+          "zrange": [
+            2.3999993801116943,
+            2.3999996185302734
+          ],
+          "triangles": 1
+        },
+        {
+          "xy_bin": [
+            50,
+            0
+          ],
+          "area": 50.74859120038944,
+          "zrange": [
+            2.399998188018799,
+            2.399998664855957
+          ],
+          "triangles": 1
+        },
+        {
+          "xy_bin": [
+            50,
+            10
+          ],
+          "area": 49.950068092352645,
+          "zrange": [
+            2.3999993801116943,
+            2.3999996185302734
+          ],
+          "triangles": 1
+        },
+        {
+          "xy_bin": [
+            20,
+            0
+          ],
+          "area": 48.56115211633628,
+          "zrange": [
+            2.399998188018799,
+            2.399998664855957
+          ],
+          "triangles": 1
+        },
+        {
+          "xy_bin": [
+            70,
+            10
+          ],
+          "area": 9.41872072219872,
+          "zrange": [
+            2.399998664855957,
+            2.3999996185302734
+          ],
+          "triangles": 1
+        },
+        {
+          "xy_bin": [
+            0,
+            10
+          ],
+          "area": 9.41872072219872,
+          "zrange": [
+            2.399998664855957,
+            2.3999996185302734
+          ],
+          "triangles": 1
+        },
+        {
+          "xy_bin": [
+            70,
+            0
+          ],
+          "area": 7.199999749661343,
+          "zrange": [
+            2.399998188018799,
+            2.3999996185302734
+          ],
+          "triangles": 1
+        },
+        {
+          "xy_bin": [
+            0,
+            0
+          ],
+          "area": 7.199999749661343,
+          "zrange": [
+            2.399998188018799,
+            2.3999996185302734
+          ],
+          "triangles": 1
+        }
+      ],
+      "nonmanifold_edges": 0,
+      "components": [
+        {
+          "triangles": 60,
+          "minZ": 0.0
+        }
+      ]
+    }
+  ],
+  "rear_gusset_angle_above_bed_deg": 50,
+  "usb_roof_angle_above_bed_deg": 5,
+  "usb_bridge_span_mm": 14,
+  "method": "Triangle normal and connectivity analysis; not sliced toolpaths"
+}

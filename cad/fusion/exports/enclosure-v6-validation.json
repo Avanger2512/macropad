@@ -1,0 +1,85 @@
+{
+  "revision": "Enclosure finishing V6",
+  "healthy_timeline": true,
+  "fully_constrained_sketches": true,
+  "connected_main_solids": 4,
+  "pairwise_intersections_mm3": 0,
+  "carrier_and_other_reference_volumes_unchanged": true,
+  "usb_throat_samples": 125,
+  "usb_throat_mm": [
+    14,
+    10
+  ],
+  "usb_center_x_z_mm": [
+    39,
+    15.2
+  ],
+  "service_holes": {
+    "BOOT_center_mm": [
+      44,
+      102.2
+    ],
+    "RESET_center_mm": [
+      35,
+      102.2
+    ],
+    "diameter_mm": 3,
+    "bore_samples": 96,
+    "datum": "User component-side measurements; board-left mirrored like USB"
+  },
+  "volumes_mm3": {
+    "UpperShell_Draft": 43013.956030146575,
+    "MiddleCarrier_Draft": 15679.36765490686,
+    "BottomCover_Draft": 18214.370282509375,
+    "Diffuser_Draft": 2112.5279999999907
+  },
+  "tilt_study": [
+    {
+      "face_tilt_deg": 5,
+      "front_roof_z_mm": 29.000000000000004,
+      "rear_roof_z_mm": 39.06119630548126,
+      "component_envelope_lid_gap_mm": 1.6999999999999957,
+      "front_fixed_component_lid_gap_mm": 1.6999999999999957,
+      "method": "Rigid rotation about rear roof X axis; flat lid top remains Z2 for study only"
+    },
+    {
+      "face_tilt_deg": 4,
+      "front_roof_z_mm": 31.008559109217433,
+      "rear_roof_z_mm": 39.06119630548126,
+      "component_envelope_lid_gap_mm": 1.7542524194975115,
+      "front_fixed_component_lid_gap_mm": -0.25430668971991466,
+      "method": "Rigid rotation about rear roof X axis; flat lid top remains Z2 for study only"
+    },
+    {
+      "face_tilt_deg": 3,
+      "front_roof_z_mm": 33.01957112973248,
+      "rear_roof_z_mm": 39.06119630548126,
+      "component_envelope_lid_gap_mm": 1.8192596761287447,
+      "front_fixed_component_lid_gap_mm": -2.2003114536037387,
+      "method": "Rigid rotation about rear roof X axis; flat lid top remains Z2 for study only"
+    },
+    {
+      "face_tilt_deg": 2,
+      "front_roof_z_mm": 35.03242348780262,
+      "rear_roof_z_mm": 39.06119630548126,
+      "component_envelope_lid_gap_mm": 1.8950019680535988,
+      "front_fixed_component_lid_gap_mm": -4.137421519749019,
+      "method": "Rigid rotation about rear roof X axis; flat lid top remains Z2 for study only"
+    },
+    {
+      "face_tilt_deg": 0,
+      "front_roof_z_mm": 39.06119630548126,
+      "rear_roof_z_mm": 39.06119630548126,
+      "component_envelope_lid_gap_mm": 2.0785961074728476,
+      "front_fixed_component_lid_gap_mm": -7.9826001980084165,
+      "method": "Rigid rotation about rear roof X axis; flat lid top remains Z2 for study only"
+    }
+  ],
+  "current_face_tilt_deg": 5,
+  "pending": [
+    "Physical BOOT/RESET tool access test",
+    "Final cable insertion test",
+    "Carrier service extraction sequence",
+    "Lower shell adaptation if tilt changes"
+  ]
+}

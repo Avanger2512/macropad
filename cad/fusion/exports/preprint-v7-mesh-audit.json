@@ -1,0 +1,153 @@
+{
+  "parts": [
+    {
+      "file": "cad/print/UpperShell_Cover_Mounts_V7.stl",
+      "triangles": 3656,
+      "bounds": [
+        [
+          0.0,
+          80.0
+        ],
+        [
+          0.0,
+          117.72276306152344
+        ],
+        [
+          0.0,
+          36.920169830322266
+        ]
+      ],
+      "dimensions": [
+        80.0,
+        117.72276306152344,
+        36.920169830322266
+      ],
+      "bed_contact_area": 6003.729889618322,
+      "overhangs": {
+        "0": {
+          "area": 0,
+          "triangles": 0
+        },
+        "30": {
+          "area": 26.71302162881713,
+          "triangles": 8
+        },
+        "45": {
+          "area": 26.71302162881713,
+          "triangles": 8
+        },
+        "50": {
+          "area": 120.72478442369993,
+          "triangles": 82
+        },
+        "55": {
+          "area": 128.02419902738038,
+          "triangles": 130
+        }
+      },
+      "risky_regions_10mm_bins": [
+        {
+          "xy_bin": [
+            40,
+            0
+          ],
+          "area": 26.60001849570387,
+          "zrange": [
+            28.542200088500977,
+            28.707796096801758
+          ],
+          "triangles": 2
+        },
+        {
+          "xy_bin": [
+            60,
+            10
+          ],
+          "area": 0.05650161659288555,
+          "zrange": [
+            30.420066833496094,
+            30.426170349121094
+          ],
+          "triangles": 3
+        },
+        {
+          "xy_bin": [
+            20,
+            10
+          ],
+          "area": 0.05650151652037301,
+          "zrange": [
+            30.420066833496094,
+            30.426170349121094
+          ],
+          "triangles": 3
+        }
+      ],
+      "nonmanifold_edges": 0,
+      "components": [
+        {
+          "triangles": 3656,
+          "minZ": 0.0
+        }
+      ]
+    },
+    {
+      "file": "cad/print/BottomCover_Finish_V6.stl",
+      "triangles": 908,
+      "bounds": [
+        [
+          0.0,
+          80.0
+        ],
+        [
+          0.0,
+          115.0
+        ],
+        [
+          0.0,
+          2.0
+        ]
+      ],
+      "dimensions": [
+        80.0,
+        115.0,
+        2.0
+      ],
+      "bed_contact_area": 8859.959143691194,
+      "overhangs": {
+        "0": {
+          "area": 0,
+          "triangles": 0
+        },
+        "30": {
+          "area": 0,
+          "triangles": 0
+        },
+        "45": {
+          "area": 0,
+          "triangles": 0
+        },
+        "50": {
+          "area": 0,
+          "triangles": 0
+        },
+        "55": {
+          "area": 0,
+          "triangles": 0
+        }
+      },
+      "risky_regions_10mm_bins": [],
+      "nonmanifold_edges": 0,
+      "components": [
+        {
+          "triangles": 908,
+          "minZ": 0.0
+        }
+      ]
+    }
+  ],
+  "rear_gusset_angle_above_bed_deg": 50,
+  "usb_roof_angle_above_bed_deg": 5,
+  "usb_bridge_span_mm": 14,
+  "method": "Triangle normal and connectivity analysis; not sliced toolpaths"
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "file": "/Users/denisbabiichuk/3dPrint/macropad/cad/print/UpperShell_Service_V8.stl",
+    "size_mm": [
+      80.0,
+      117.7227617627437,
+      36.92016921039442
+    ],
+    "volume_mm3": 43965.73412774844,
+    "cad_volume_mm3": 43969.706654933594,
+    "triangles": 3720,
+    "closed_edges": true,
+    "rotation_about_x_deg": 175,
+    "bed_z_mm": 0
+  },
+  {
+    "file": "/Users/denisbabiichuk/3dPrint/macropad/cad/print/Diffuser_Service_V8.stl",
+    "size_mm": [
+      69.60000324249268,
+      12.558295737684844,
+      6.0000004763003325
+    ],
+    "volume_mm3": 2062.617998060627,
+    "cad_volume_mm3": 2062.619318659798,
+    "triangles": 60,
+    "closed_edges": true,
+    "rotation_about_x_deg": 175,
+    "bed_z_mm": 0
+  }
+]

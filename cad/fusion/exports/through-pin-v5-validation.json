@@ -1,0 +1,67 @@
+{
+  "revision": "V5 through pin",
+  "axis": "local X",
+  "axis_y_z_mm": [
+    2.8,
+    1.6000000000000003
+  ],
+  "pin_diameter_mm": 1,
+  "bore_diameter_mm": 1.2,
+  "pin_straight_length_mm": 20,
+  "both_wall_span_mm": 18.4,
+  "external_length_each_side_mm": 0.8,
+  "positions": [
+    {
+      "position": "Compact",
+      "full_bore_samples": 2424,
+      "both_wall_engagement": true
+    },
+    {
+      "position": "SW1",
+      "full_bore_samples": 2424,
+      "both_wall_engagement": true
+    },
+    {
+      "position": "SW2",
+      "full_bore_samples": 2424,
+      "both_wall_engagement": true
+    },
+    {
+      "position": "SW3",
+      "full_bore_samples": 2424,
+      "both_wall_engagement": true
+    },
+    {
+      "position": "SW4",
+      "full_bore_samples": 2424,
+      "both_wall_engagement": true
+    },
+    {
+      "position": "SW5",
+      "full_bore_samples": 2424,
+      "both_wall_engagement": true
+    },
+    {
+      "position": "SW6",
+      "full_bore_samples": 2424,
+      "both_wall_engagement": true
+    }
+  ],
+  "assumed_central_post_radius_mm": 2,
+  "assumed_central_post_bore_gap_mm": 0.19999999999999973,
+  "guide_bore_gap_mm": 1.4499999999999997,
+  "electrical_x_wire_bore_gaps_mm": [
+    3.970041612382463,
+    6.5615353891593005,
+    4.973216017535459
+  ],
+  "electrical_y_wire_bore_gap_mm": 1.143048999999999,
+  "healthy_timeline": true,
+  "unconstrained_sketches": [],
+  "volumes_mm3": {
+    "MiddleCarrier_Draft": 15679.36765490686,
+    "SwitchFitCoupon_Compact_V4": 952.899049443209,
+    "HotswapCompact_Pin_V4": 291.17294444674394
+  },
+  "limits": "V5 requires new physical fit trial; full pin withdrawal and complete assembly removal remain unverified; lid supports unchanged; USB opening pending"
+}
