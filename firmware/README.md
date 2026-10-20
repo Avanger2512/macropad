@@ -1,8 +1,15 @@
-# ESP32-S3 SuperMini Test — Arduino Framework
+# ESP32-S3 SuperMini Macropad Firmware
+
+The board now runs [RMK + Vial](rmk_macropad/README.md), with configurable keys,
+encoder actions, four layers, layer RGB and an interactive SH1106 OLED. Start
+with [the installation guide](INSTALL_RMK_VIAL.md). The Arduino hardware test
+below is retained for diagnostics and recovery.
+
+## Arduino hardware test
 
 Open `macropad_test/macropad_test.ino` in Arduino IDE. Keep `InputLogic.h` and `BoardPins.h` next to the sketch. USB HID is not used; Serial runs over native USB CDC.
 
-For the complete macOS build, upload, and USB recovery procedure, see [FLASHING.md](FLASHING.md).
+For the complete macOS build, upload, and USB recovery procedure, see [FLASHING.md](FLASHING.md). For RMK/Vial and Mac application setup, see [INSTALL_RMK_VIAL.md](INSTALL_RMK_VIAL.md).
 
 ## Pinned Build Dependencies
 
