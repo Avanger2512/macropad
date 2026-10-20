@@ -1,5 +1,10 @@
 # ESP32-S3 Macropad — RMK / Vial
 
+Claude Code and Codex question/permission alerts are now supported through a separate
+vendor USB HID interface, with source logos, a temporary OLED overlay and breathing LEDs.
+See [host bridge setup and recovery](../host/README.md). The device receives only
+notification state; hooks do not approve actions or answer questions.
+
 Built and flashed on October 20, 2026. macOS enumerated **Macropad Vial**
 (VID `FEED`, PID `6061`) with keyboard, consumer-control and Vial raw-HID interfaces.
 The owner confirmed Vial discovery, OLED and LEDs. A layer-0 Ghostty shortcut

@@ -2060,8 +2060,10 @@ dependencies = [
  "bt-hci 0.10.1",
  "cc",
  "const-gen",
+ "critical-section",
  "embassy-executor",
  "embassy-time",
+ "embassy-usb",
  "embedded-graphics",
  "embedded-hal 1.0.0",
  "embuild",
@@ -2075,6 +2077,7 @@ dependencies = [
  "esp-storage",
  "json",
  "rmk",
+ "static_cell",
  "xz2",
 ]
 

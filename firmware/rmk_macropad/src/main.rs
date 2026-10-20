@@ -2,6 +2,10 @@
 #![no_main]
 
 use rmk::macros::rmk_keyboard;
+mod alert_policy;
+mod alerts;
+mod alerts_usb;
+mod brand_icons;
 mod display;
 mod display_policy;
 mod rgb;
@@ -11,6 +15,20 @@ mod rgb_policy;
 // Please put `vial.json` at your project's root
 #[rmk_keyboard]
 mod keyboard {
+    // Retain every generated keyboard/storage task; extend only USB composition.
+    #[Overwritten(entry)]
+    fn entry() {
+        let mut builder = rmk::usb::UsbTransport::builder(driver, rmk_config.device_config);
+        let alert_hid = crate::alerts_usb::new(builder.usb_builder());
+        let mut usb_transport = builder.build().with_host_service(&host_service);
+        let mut wpm_processor = rmk::processor::builtin::wpm::WpmProcessor::new();
+        rmk::embassy_futures::join::join(
+            rmk::run_all!(encoder_0, matrix, storage, keyboard, layer_rgb,
+                display_processor, wpm_processor, usb_transport),
+            crate::alerts_usb::run(alert_hid),
+        ).await;
+    }
+
     #[register_processor]
     fn layer_rgb() -> crate::rgb::LayerRgb<esp_hal::spi::master::Spi<'static, esp_hal::Blocking>> {
         let spi = esp_hal::spi::master::Spi::new(

@@ -12,11 +12,12 @@ pub struct LayerRgb<S: SpiBus<u8>> {
     spi: S,
     layer: u8,
     dirty: bool,
+    last_color: Option<[u8; 3]>,
 }
 
 impl<S: SpiBus<u8>> LayerRgb<S> {
     pub fn new(spi: S) -> Self {
-        Self { spi, layer: 0, dirty: true }
+        Self { spi, layer: 0, dirty: true, last_color: None }
     }
 
     async fn on_layer_change_event(&mut self, event: LayerChangeEvent) {
@@ -27,12 +28,18 @@ impl<S: SpiBus<u8>> LayerRgb<S> {
     }
 
     async fn poll(&mut self) {
-        if !self.dirty {
+        let now = embassy_time::Instant::now().as_millis();
+        let color = crate::alert_policy::pulse_color(crate::alerts::current(now), now)
+            .unwrap_or_else(|| layer_color(self.layer));
+        if !self.dirty && self.last_color == Some(color) {
             return;
         }
-        let frame = encode_frame(layer_color(self.layer));
+        let frame = encode_frame(color);
         match self.spi.write(&frame).and_then(|()| self.spi.flush()) {
-            Ok(()) => self.dirty = false,
+            Ok(()) => {
+                self.dirty = false;
+                self.last_color = Some(color);
+            }
             Err(_) => {
                 // Retry on the next poll; a failed write must not stop key scanning.
                 esp_println::println!("RGB SPI write failed; retrying");
