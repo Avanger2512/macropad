@@ -1,5 +1,11 @@
 # Claude Code and Codex notifications on the Macropad
 
+Current device indication (October 22, 2026): the external strip is disconnected
+and the OLED is damaged. Firmware now uses onboard **blue** flashes for both
+clients and both attention kinds, and switches off when idle. This host bridge
+and its source isolation, TTL and ACK protocol are unchanged. Colored strip/OLED descriptions below
+refer to the preceding hardware mode.
+
 Installed and hardware-tested on macOS, October 20, 2026, with Claude Code
 2.1.304. The owner confirmed the question screen, smooth LED pulse and automatic
 return to the regular display. The installed hook command also passed simulated

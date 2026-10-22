@@ -1,0 +1,109 @@
+{
+  "revision": "C4",
+  "parts": {
+    "shell": {
+      "bbox_mm": [
+        106.0,
+        74.0,
+        16.4
+      ],
+      "volume_mm3": 24044.19621,
+      "solids": 1
+    },
+    "cover": {
+      "bbox_mm": [
+        106.0,
+        74.0,
+        2.4
+      ],
+      "volume_mm3": 18721.02418,
+      "solids": 1
+    },
+    "coupon": {
+      "bbox_mm": [
+        66.0,
+        24.0,
+        2.4
+      ],
+      "volume_mm3": 2161.66242,
+      "solids": 1
+    }
+  },
+  "reference_count": 40,
+  "intersection_checks": 81,
+  "collisions": [],
+  "oled_insertion_checks": 12,
+  "oled": {
+    "glass_depth_measured_mm": 18.2,
+    "window_x_bounds_mm": [
+      65.55,
+      100.45
+    ],
+    "window_y_bounds_mm": [
+      38.0,
+      57.0
+    ],
+    "glass_offset_y_mm": -1.5,
+    "glass_top_z_mm": 18.8,
+    "nominal_flush_z_mm": 18.8,
+    "hole_centers_xy_mm": [
+      [
+        67.5,
+        35.0
+      ],
+      [
+        67.5,
+        63.0
+      ],
+      [
+        98.5,
+        35.0
+      ],
+      [
+        98.5,
+        63.0
+      ]
+    ],
+    "mount": "four roof-integral collars and downward pins; user adhesive"
+  },
+  "mcu": {
+    "pin_row_spacing_mm": 15.0,
+    "pin_row_occupied_length_mm": 20.5,
+    "end_clearance_per_end_mm": 0.15,
+    "slots": [
+      {
+        "center_x_mm": 12.5,
+        "x_bounds_mm": [
+          11.6,
+          13.4
+        ],
+        "y_bounds_mm": [
+          2.85,
+          23.65
+        ]
+      },
+      {
+        "center_x_mm": 27.5,
+        "x_bounds_mm": [
+          26.6,
+          28.4
+        ],
+        "y_bounds_mm": [
+          2.85,
+          23.65
+        ]
+      }
+    ]
+  },
+  "legacy_c3_lid": {
+    "old_cover_new_shell_overlap_mm3": 0.0,
+    "old_cover_hardware_overlap_mm3": 0.0,
+    "nominal_pin_tip_to_old_key_mm": 0.2
+  },
+  "diagnosis_old_window_actual_glass_overlap_mm3": 85.73250000000003,
+  "limits": [
+    "Physical switch clipping requires fit sample",
+    "PCB, glass Z thickness and component projections provisional",
+    "Adhesive behavior not simulated"
+  ]
+}

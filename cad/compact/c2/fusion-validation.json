@@ -1,0 +1,99 @@
+{
+  "revision": "C2 flush OLED and left encoder",
+  "fusion_mcp_validated": true,
+  "validation_kind": "native Fusion BRep checks of imported STEP mirror",
+  "source_step_sha256": "69690260c8881c41cfe2502573427aa6d9e89ff1903fcd14c6011ab17ff0264a",
+  "imported_body_count": 44,
+  "native_pair_checks": 166,
+  "positive_volume_collisions": [],
+  "parts": {
+    "shell": {
+      "bbox_mm": [
+        100.0,
+        82.00000000000001,
+        16.400000000000002
+      ],
+      "volume_mm3": 24412.360314854566,
+      "solid": true,
+      "lumps": 1
+    },
+    "cover": {
+      "bbox_mm": [
+        100.0,
+        82.00000000000001,
+        14.2
+      ],
+      "volume_mm3": 20263.84182303144,
+      "solid": true,
+      "lumps": 1
+    },
+    "oled_cradle": {
+      "bbox_mm": [
+        36.00000000000001,
+        34.0,
+        2.799999999999998
+      ],
+      "volume_mm3": 606.3872114394277,
+      "solid": true,
+      "lumps": 1
+    },
+    "mcu_cradle": {
+      "bbox_mm": [
+        24.0,
+        21.15,
+        2.6000000000000023
+      ],
+      "volume_mm3": 327.8400000000005,
+      "solid": true,
+      "lumps": 1
+    }
+  },
+  "oled": {
+    "centers_xy_mm": [
+      [
+        59.5,
+        8.0
+      ],
+      [
+        59.5,
+        36.0
+      ],
+      [
+        90.5,
+        8.0
+      ],
+      [
+        90.5,
+        36.0
+      ]
+    ],
+    "pitch_mm": [
+      31,
+      28
+    ],
+    "hole_diameter_mm": 2.5,
+    "pin_diameter_mm": 2.2,
+    "diametral_clearance_mm": 0.3,
+    "lead_height_mm": 0.4,
+    "glass_flush_with_shell": true,
+    "pcb_hidden_inside": true,
+    "roof_relief_samples": 8,
+    "cover_registration_keys_aligned": true,
+    "centered_on_pcb_assumed": true
+  },
+  "encoder": {
+    "axis_xy_mm": [
+      17,
+      22
+    ],
+    "aligned_with_display_y_mm": 22
+  },
+  "upper_mcu_clamp": false,
+  "limits": [
+    "Hardware envelopes except measured dimensions remain provisional",
+    "OLED roof/cover capture and exact flush height need physical fit",
+    "MCU upper clamp omitted per user; lift retention not finalized",
+    "Physical fit and slicing of the full shell not yet verified",
+    "Native document is a STEP mirror; Python source owns parameters"
+  ]
+}

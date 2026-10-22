@@ -1,0 +1,107 @@
+{
+  "revision": "C1 concept",
+  "fusion_mcp_validated": false,
+  "parts": {
+    "shell": {
+      "label": "C1 top shell - provisional electronics seats",
+      "solids": 1,
+      "volume_mm3": 23433.758,
+      "bbox_mm": [
+        106.0,
+        74.0,
+        16.4
+      ]
+    },
+    "cover": {
+      "label": "C1 removable lower cover - M2 clearance",
+      "solids": 1,
+      "volume_mm3": 18721.024,
+      "bbox_mm": [
+        106.0,
+        74.0,
+        2.4
+      ]
+    },
+    "mcu_strap": {
+      "label": "C1 removable MCU strap - edge clearance provisional",
+      "solids": 1,
+      "volume_mm3": 369.547,
+      "bbox_mm": [
+        23.0,
+        6.5,
+        4.25
+      ]
+    },
+    "coupon": {
+      "label": "MX fit coupon - left 14.1 right 14.2 seat 1.5",
+      "solids": 1,
+      "volume_mm3": 1042.266,
+      "bbox_mm": [
+        44.0,
+        25.0,
+        1.5
+      ]
+    },
+    "oled_cradle": {
+      "label": "C1 OLED cradle - 31x28 locating pins diameter 2.2",
+      "solids": 1,
+      "volume_mm3": 628.287,
+      "bbox_mm": [
+        36.0,
+        34.0,
+        3.5
+      ]
+    },
+    "mcu_cradle": {
+      "label": "C1 replaceable MCU cradle - provisional",
+      "solids": 1,
+      "volume_mm3": 261.12,
+      "bbox_mm": [
+        24.0,
+        20.0,
+        1.2
+      ]
+    }
+  },
+  "reference_count": 40,
+  "intersection_checks": 210,
+  "collisions": [],
+  "assumed_mx_solder_tip_to_cover_mm": 4.9,
+  "nominal_shell_height_mm": 18.8,
+  "oled_mount": {
+    "hole_pitch_mm": [
+      31.0,
+      28.0
+    ],
+    "hole_diameter_mm": 2.5,
+    "pin_diameter_mm": 2.2,
+    "diametral_clearance_mm": 0.2999999999999998,
+    "centers_xy_mm": [
+      [
+        67.5,
+        35.0
+      ],
+      [
+        67.5,
+        63.0
+      ],
+      [
+        98.5,
+        35.0
+      ],
+      [
+        98.5,
+        63.0
+      ]
+    ],
+    "centered_on_pcb_assumed": true
+  },
+  "limits": [
+    "OLED pattern centered on PCB assumed; edge retention not finalized",
+    "MCU outline, underside components, USB and antenna unmeasured",
+    "Encoder axis position and underside depth provisional",
+    "MX clips and wire bends require physical coupon/assembly",
+    "Reference solids are envelopes, not manufacturer models",
+    "No print-ready full enclosure released"
+  ]
+}

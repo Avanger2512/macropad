@@ -1,0 +1,101 @@
+[
+  {
+    "input": "cad/compact/c2/compact_model.step",
+    "mode": "view",
+    "outputs": [
+      {
+        "path": "cad/compact/c2/previews/c2-assembly.png",
+        "camera": "iso"
+      },
+      {
+        "path": "cad/compact/c2/previews/c2-assembly-top.png",
+        "camera": "top"
+      },
+      {
+        "path": "cad/compact/c2/previews/c2-assembly-front.png",
+        "camera": "front"
+      },
+      {
+        "path": "cad/compact/c2/previews/c2-assembly-bottom.png",
+        "camera": {
+          "direction": [
+            -1,
+            1,
+            -0.8
+          ]
+        }
+      }
+    ],
+    "render": {
+      "viewLabels": true,
+      "padding": 0.12,
+      "sizeProfile": "diagnostic"
+    }
+  },
+  {
+    "input": "cad/compact/c2/top_shell.step",
+    "mode": "view",
+    "outputs": [
+      {
+        "path": "cad/compact/c2/previews/c2-top_shell.png",
+        "camera": {
+          "direction": [
+            -1,
+            1,
+            -0.8
+          ]
+        }
+      }
+    ],
+    "render": {
+      "viewLabels": true,
+      "padding": 0.12,
+      "sizeProfile": "diagnostic"
+    }
+  },
+  {
+    "input": "cad/compact/c2/bottom_cover.step",
+    "mode": "view",
+    "outputs": [
+      {
+        "path": "cad/compact/c2/previews/c2-bottom_cover.png",
+        "camera": "iso"
+      }
+    ],
+    "render": {
+      "viewLabels": true,
+      "padding": 0.12,
+      "sizeProfile": "diagnostic"
+    }
+  },
+  {
+    "input": "cad/compact/c2/oled_cradle.step",
+    "mode": "view",
+    "outputs": [
+      {
+        "path": "cad/compact/c2/previews/c2-oled_cradle.png",
+        "camera": "iso"
+      }
+    ],
+    "render": {
+      "viewLabels": true,
+      "padding": 0.12,
+      "sizeProfile": "diagnostic"
+    }
+  },
+  {
+    "input": "cad/compact/c2/mcu_cradle.step",
+    "mode": "view",
+    "outputs": [
+      {
+        "path": "cad/compact/c2/previews/c2-mcu_cradle.png",
+        "camera": "iso"
+      }
+    ],
+    "render": {
+      "viewLabels": true,
+      "padding": 0.12,
+      "sizeProfile": "diagnostic"
+    }
+  }
+]

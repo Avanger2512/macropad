@@ -1,0 +1,17 @@
+{
+  "file": "cad/compact/mx_coupon.stl",
+  "triangles": 440,
+  "closed_two_manifold_edges": true,
+  "bounds_mm": [
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      44.0,
+      25.0,
+      1.5
+    ]
+  ]
+}

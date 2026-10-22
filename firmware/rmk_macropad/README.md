@@ -1,5 +1,22 @@
 # ESP32-S3 Macropad — RMK / Vial
 
+Current hardware mode, October 22, 2026: the OLED was physically damaged and
+the external LED strip is disconnected. The onboard WS2812 on GPIO48 provides
+**blue-only status**. Attention from either Codex or Claude flashes for 250 ms
+in each 600 ms period. Changing layer 0/1/2/3 produces 1/2/3/4 flashes, each
+150 ms long and 400 ms apart, then switches off. Startup and idle are dark.
+Alerts override layer feedback; the latest pending layer sequence restarts once
+when the alert clears. The owner confirmed blue flashing and layer indication.
+Existing HID protocol, host hooks, Vial schema and settings are retained.
+
+The board's discrete red LED shares GPIO48 with the WS2812 data line. Direct
+HIGH/LOW control was physically confirmed to blink red; the final driver uses
+2.4 MHz SPI GRB encoding with blue [0, 0, 20], ending low. The first onboard
+pixel receives the frame; the extra encoded pixels have no connected LEDs.
+Reference: [supplier schematic](https://www.tinytronics.nl/product_files/007217_ESP32-S3_Supermini_schematic.png).
+
+The original RGB/OLED descriptions below record the previous hardware mode.
+
 Claude Code and Codex question/permission alerts are now supported through a separate
 vendor USB HID interface, with source logos, a temporary OLED overlay and breathing LEDs.
 See [host bridge setup and recovery](../host/README.md). The device receives only
@@ -47,7 +64,7 @@ See [USB recovery](../FLASHING.md) if the ROM loader does not respond.
 - Four editable layers. Extra layers initially inherit Base assignments.
 - Vial physical unlock combination: hold SW1 and SW6 when prompted.
 - OLED: SH1106 128x64, SDA11/SCL12, address 0x3C, custom interactive status renderer (see below).
-- Four WS2812 on GPIO13: dim green/blue/orange/purple for layers 0/1/2/3.
+- Current indicator: onboard WS2812 on GPIO48, blue flashes; external GPIO13 strip disconnected.
   This is local layer indication; VialRGB controls are not implemented.
 
 In Vial assign a key to `MO(1)` or `TG(1)` to reach another layer. Changes are
@@ -143,3 +160,29 @@ compound action through Any, select its upper/whole-action area first. Selecting
 the lower Tab area edits only the nested key and retains existing modifiers.
 Firmware defaults in keyboard.toml remain F13–F18/volume; saved runtime settings
 and exported .vil files are the customized configuration.
+
+## Blue status firmware — October 22, 2026
+
+Pure timing policy: `src/status_led_policy.rs`; hardware adapter: `src/rgb.rs`.
+Eight timing tests cover startup, idle, pulse boundaries for every layer,
+repeated-layer suppression, alert priority, stable heartbeat timing, pending
+layer replay and expiry. Two WS2812 tests cover GRB framing and blue/off frames.
+The five existing alert tests, three display tests and 25 Python tests pass.
+The release built offline against the existing lockfile. Remaining warnings:
+unused legacy `pulse_color` and the existing Xtensa RWX LOAD linker warning.
+
+A full 4 MiB recovery image and SHA-256 are saved locally at the repository root:
+`build/recovery/rmk-before-status-led-2026-10-22.bin` plus `.bin.sha256`.
+The 64 KiB settings backup is
+`build/recovery/rmk-settings-before-status-led-2026-10-22.bin`.
+Readback after the first update matched every settings byte. Only the app at
+0x10000 was written; bootloader, partitions and settings are outside that range.
+Generated Vial config and keyboard.toml/vial.json/Cargo.toml/Cargo.lock/partitions.csv
+hashes were compared unchanged. Final application:
+`build/rmk/macropad-vial-status-led-blue-app.bin`, 618,304 bytes, with SHA-256.
+The first direct-GPIO app is a diagnostic intermediate, not the blue release.
+
+Esptool verified the final application hash, the USB device re-enumerated and
+the existing bridge acknowledged Codex and combined Claude/Codex test states.
+The owner confirmed that the LED flashes blue and that layer counts work.
+The update did not change or repair the damaged OLED.

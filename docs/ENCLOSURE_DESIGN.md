@@ -1,5 +1,34 @@
 # Enclosure design brief
 
+Latest compact revision: [C4](../cad/compact/c4/README.md),106×74×18.8, retains
+C3 placement after the first physical test print. MX apertures are14.0mm with
+1.5clip seats. OLED glass short side18.2 and margins6towardencoder/9away imply
+a1.5mm shift toward encoder: corrected34.9×19window centerX83/Y47.5. The PCB
+mounting pattern31×28 stays centeredX83/Y49. Four integral upper collars and
+downward glue pins replace the separate frame and lower columns. ESP slots
+are1.8×20.8 with15center spacing; no added MCU supports. STL exports and a
+three-size MX fit sample are in C4. Detailed checks/assumptions in its brief.
+C1/C2/C3 and the prior printed enclosure remain historical models.
+
+Current direction, 2026-10-22: the user rejected the printed enclosure's size and
+approved a complete Iskra-inspired redesign, reprinting every plastic part and
+rewiring without the 70 × 50 perfboard, hotswap holders, LEDs or diffuser. The
+previous instruction to preserve the printed middle carrier does not constrain
+the new concept. Retain the old model as a historical version. See
+[compact C1 brief and validation](../cad/compact/README.md).
+
+The approved concept places six MX switches at 19.05 mm pitch on the left,
+OLED on the right, exposed ESP32 above the rear top with pins downward, and
+encoder beside the MCU. OLED locating pins through its mounting holes are
+preferred, with support pads and removable edge retention. Hole diameter and
+center spacing were subsequently measured: 31 × 28 mm, Ø2.5 holes. The C1 OLED
+frame now has four Ø2.2 locating pins with 0.5 mm tapered leads. Pattern centering
+on the PCB and upward retention remain to be confirmed. Native Fusion MCP checks
+on the separate imported compact STEP mirror passed; see `fusion-validation.json`
+in `cad/compact`.
+
+The sections below describe the previous printed V9 architecture.
+
 Status: native Fusion prototype with revised PCB mounts and bolt-free holder retention, October 13, 2026. Four enclosure bodies and two auxiliary fit samples now exist in the user's `macropad` Fusion Part Design document; see [native Fusion draft details](../cad/fusion/README.md). Physical component fit is not validated. All dimensions are in millimeters.
 
 ## Confirmed requirements

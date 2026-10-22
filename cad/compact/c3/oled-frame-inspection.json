@@ -1,0 +1,172 @@
+{
+  "ok": true,
+  "tokens": [
+    {
+      "line": 1,
+      "token": "#",
+      "cadPath": "cad/compact/c3/oled_fit_coupon",
+      "stepPath": "cad/compact/c3/oled_fit_coupon.step",
+      "stepHash": "d7e16fcfa4f12a94e0bff9e0507d7946c1846326c0785738a1544b232c5bf222",
+      "summary": {
+        "kind": "part",
+        "occurrenceCount": 1,
+        "leafOccurrenceCount": 1,
+        "shapeCount": 1,
+        "faceCount": 30,
+        "edgeCount": 56,
+        "vertexCount": 0,
+        "bounds": {
+          "min": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max": [
+            36.0,
+            34.0,
+            2.8
+          ]
+        }
+      },
+      "selections": [],
+      "warnings": [],
+      "entryFacts": {
+        "size": [
+          36.0,
+          34.0,
+          2.8
+        ],
+        "extentAxis": "x",
+        "center": [
+          18.0,
+          17.0,
+          1.4
+        ],
+        "diag": 49.59677408864411,
+        "kind": "part"
+      },
+      "planes": [
+        {
+          "axis": "z",
+          "coordinate": 1.2,
+          "normalSign": 1,
+          "faceCount": 1,
+          "totalArea": 480.819886,
+          "bbox": {
+            "min": [
+              0.0,
+              0.0,
+              1.2
+            ],
+            "max": [
+              36.0,
+              34.0,
+              1.2
+            ]
+          },
+          "selectors": [
+            "f3"
+          ]
+        },
+        {
+          "axis": "z",
+          "coordinate": 0.0,
+          "normalSign": -1,
+          "faceCount": 1,
+          "totalArea": 479.408512,
+          "bbox": {
+            "min": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "max": [
+              36.0,
+              34.0,
+              0.0
+            ]
+          },
+          "selectors": [
+            "f5"
+          ]
+        }
+      ],
+      "entryPositioning": {
+        "kind": "part",
+        "bbox": {
+          "min": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max": [
+            36.0,
+            34.0,
+            2.8
+          ]
+        },
+        "bboxFacts": {
+          "size": [
+            36.0,
+            34.0,
+            2.8
+          ],
+          "extentAxis": "x",
+          "center": [
+            18.0,
+            17.0,
+            1.4
+          ],
+          "diag": 49.59677408864411
+        },
+        "majorPlanes": [
+          {
+            "axis": "z",
+            "coordinate": 1.2,
+            "normalSign": 1,
+            "faceCount": 1,
+            "totalArea": 480.819886,
+            "bbox": {
+              "min": [
+                0.0,
+                0.0,
+                1.2
+              ],
+              "max": [
+                36.0,
+                34.0,
+                1.2
+              ]
+            },
+            "selectors": [
+              "f3"
+            ]
+          },
+          {
+            "axis": "z",
+            "coordinate": 0.0,
+            "normalSign": -1,
+            "faceCount": 1,
+            "totalArea": 479.408512,
+            "bbox": {
+              "min": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "max": [
+                36.0,
+                34.0,
+                0.0
+              ]
+            },
+            "selectors": [
+              "f5"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "errors": []
+}

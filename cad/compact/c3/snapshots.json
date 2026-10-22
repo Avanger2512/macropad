@@ -1,0 +1,86 @@
+[
+  {
+    "input": "cad/compact/c3/compact_model.step",
+    "mode": "view",
+    "outputs": [
+      {
+        "path": "cad/compact/c3/previews/c3-assembly.png",
+        "camera": "iso"
+      },
+      {
+        "path": "cad/compact/c3/previews/c3-assembly-top.png",
+        "camera": "top"
+      },
+      {
+        "path": "cad/compact/c3/previews/c3-assembly-front.png",
+        "camera": "front"
+      },
+      {
+        "path": "cad/compact/c3/previews/c3-assembly-bottom.png",
+        "camera": {
+          "direction": [
+            -1,
+            1,
+            -0.8
+          ]
+        }
+      }
+    ],
+    "render": {
+      "viewLabels": true,
+      "padding": 0.12,
+      "sizeProfile": "diagnostic"
+    }
+  },
+  {
+    "input": "cad/compact/c3/top_shell.step",
+    "mode": "view",
+    "outputs": [
+      {
+        "path": "cad/compact/c3/previews/c3-top_shell.png",
+        "camera": {
+          "direction": [
+            -1,
+            1,
+            -0.8
+          ]
+        }
+      }
+    ],
+    "render": {
+      "viewLabels": true,
+      "padding": 0.12,
+      "sizeProfile": "diagnostic"
+    }
+  },
+  {
+    "input": "cad/compact/c3/bottom_cover.step",
+    "mode": "view",
+    "outputs": [
+      {
+        "path": "cad/compact/c3/previews/c3-bottom_cover.png",
+        "camera": "iso"
+      }
+    ],
+    "render": {
+      "viewLabels": true,
+      "padding": 0.12,
+      "sizeProfile": "diagnostic"
+    }
+  },
+  {
+    "input": "cad/compact/c3/oled_cradle.step",
+    "mode": "view",
+    "outputs": [
+      {
+        "path": "cad/compact/c3/previews/c3-oled_cradle.png",
+        "camera": "iso"
+      }
+    ],
+    "render": {
+      "viewLabels": true,
+      "padding": 0.12,
+      "sizeProfile": "diagnostic"
+    }
+  }
+]

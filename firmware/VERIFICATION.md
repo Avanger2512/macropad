@@ -63,3 +63,33 @@ Post-upload USB Serial check passed: four consecutive `STATUS keys=000000 encSW=
 ## Encoder Direction Reversal — October 19, 2026
 
 The user confirmed all six physical buttons work after remapping. At their request ENCODER_DIRECTION was changed from 1 to -1, reversing position and hue direction. Native tests and Arduino --warnings all build passed (359694 bytes flash, 24052 bytes RAM). Upload using esptool 5.6.0 with USB reset succeeded, all regions passed hash verification, and post-reset Serial confirmed STATUS and OLED=0x3C. The user subsequently confirmed the encoder direction is corrected. All six buttons and the requested encoder direction are now physically verified.
+
+
+## October 22, 2026 — onboard blue status LED
+
+After rewiring for the compact case, the owner reported a physically cracked,
+black OLED and a disconnected external strip. USB still enumerated as Macropad
+Vial. Passive media HID monitoring captured two encoder push/release pairs
+(Mute). Rotation was configured as cyclic layer switching, so it could not be
+confirmed through ordinary media reports at that stage.
+
+The onboard indicator now uses SPI2 MOSI GPIO48 and WS2812 GRB framing:
+blue [0, 0, 20] while illuminated, black otherwise. The first direct-GPIO test
+lit the discrete red LED on the shared net and was replaced with the WS2812
+implementation. Attention pulses are 250 ms on in a 600 ms period; layer 0–3
+changes produce 1–4 pulses of 150 ms in 400 ms periods. Notifications take
+priority and replay the latest interrupted layer sequence once after clearing.
+Startup and idle are dark.
+
+18 Rust tests and 25 Python tests passed; the locked offline release built.
+A complete 4 MiB backup and separate 64 KiB settings backup were saved under
+`build/recovery/`, with SHA-256 files. All 65,536 settings bytes read after the
+first update matched the pre-update backup. Existing generated Vial config and
+schema inputs were unchanged. The final app was written only at 0x10000;
+esptool verified its hash. Final app and flash log are in `build/rmk/`.
+USB re-enumerated with Vial and notification interfaces. The existing host
+bridge acknowledged Codex and combined Claude/Codex attention states.
+
+The owner explicitly confirmed: “Синий мигает, слои тоже показываются.”
+Blue indication and encoder layer switching are now physically verified.
+OLED communication was not repaired or verified by this change.

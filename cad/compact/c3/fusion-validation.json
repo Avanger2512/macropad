@@ -1,0 +1,89 @@
+{
+  "revision": "C3 original layout, flush OLED, encoder above OLED, bare MCU pin slots",
+  "fusion_mcp_validated": true,
+  "validation_kind": "native Fusion BRep checks of imported STEP mirror",
+  "source_step_sha256": "3047e502f5b75389b404eb0cffe0c57361086298ea4831d3288598dcc12b7497",
+  "imported_body_count": 43,
+  "native_pair_checks": 123,
+  "positive_volume_collisions": [],
+  "parts": {
+    "shell": {
+      "bbox_mm": [
+        106.00000000000001,
+        74.0,
+        16.400000000000002
+      ],
+      "volume_mm3": 24026.998314854525,
+      "solid": true,
+      "lumps": 1
+    },
+    "cover": {
+      "bbox_mm": [
+        106.00000000000001,
+        74.0,
+        14.2
+      ],
+      "volume_mm3": 19409.761823031433,
+      "solid": true,
+      "lumps": 1
+    },
+    "oled_cradle": {
+      "bbox_mm": [
+        36.000000000000014,
+        34.0,
+        2.799999999999998
+      ],
+      "volume_mm3": 606.3872114394279,
+      "solid": true,
+      "lumps": 1
+    }
+  },
+  "oled": {
+    "centers_xy_mm": [
+      [
+        67.5,
+        35.0
+      ],
+      [
+        67.5,
+        63.0
+      ],
+      [
+        98.5,
+        35.0
+      ],
+      [
+        98.5,
+        63.0
+      ]
+    ],
+    "pitch_mm": [
+      31,
+      28
+    ],
+    "hole_diameter_mm": 2.5,
+    "pin_diameter_mm": 2.2,
+    "diametral_clearance_mm": 0.3,
+    "lead_height_mm": 0.4,
+    "glass_flush_with_shell": true,
+    "pcb_hidden_inside": true,
+    "roof_relief_samples": 8,
+    "cover_registration_keys_aligned": true,
+    "centered_on_pcb_assumed": true
+  },
+  "encoder": {
+    "axis_xy_mm": [
+      83,
+      14
+    ],
+    "aligned_with_display_x_mm": 83
+  },
+  "upper_mcu_clamp": false,
+  "limits": [
+    "Hardware envelopes except measured dimensions remain provisional",
+    "OLED roof/cover capture and exact flush height need physical fit",
+    "MCU supports omitted per user; adhesive assembly from below",
+    "Physical fit and slicing of the full shell not yet verified",
+    "Native document is a STEP mirror; Python source owns parameters"
+  ]
+}

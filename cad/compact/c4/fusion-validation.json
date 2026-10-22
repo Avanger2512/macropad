@@ -1,0 +1,183 @@
+{
+  "revision": "C4 physical fit updates",
+  "fusion_mcp_validated": true,
+  "source_step_sha256": "dd961793ff3020a0d99995edf54b58d54d929d2e53e92c0a2469e1ae1c26d4b5",
+  "imported_body_count": 42,
+  "native_pair_checks": 81,
+  "positive_volume_collisions": [],
+  "parts": {
+    "shell": {
+      "bbox_mm": [
+        106.00000000000001,
+        74.0,
+        16.400000000000002
+      ],
+      "volume_mm3": 24044.196214022315,
+      "solid": true,
+      "lumps": 1
+    },
+    "cover": {
+      "bbox_mm": [
+        106.00000000000001,
+        74.0,
+        2.4
+      ],
+      "volume_mm3": 18721.024182399608,
+      "solid": true,
+      "lumps": 1
+    }
+  },
+  "switch_measurements": [
+    {
+      "center_xy_mm": [
+        14.0,
+        39.0
+      ],
+      "x_bounds_mm": [
+        7.0,
+        21.0
+      ],
+      "y_bounds_mm": [
+        32.0,
+        46.0
+      ]
+    },
+    {
+      "center_xy_mm": [
+        33.05,
+        39.0
+      ],
+      "x_bounds_mm": [
+        26.05,
+        40.05
+      ],
+      "y_bounds_mm": [
+        32.0,
+        46.0
+      ]
+    },
+    {
+      "center_xy_mm": [
+        52.1,
+        39.0
+      ],
+      "x_bounds_mm": [
+        45.1,
+        59.1
+      ],
+      "y_bounds_mm": [
+        32.0,
+        46.0
+      ]
+    },
+    {
+      "center_xy_mm": [
+        14.0,
+        58.05
+      ],
+      "x_bounds_mm": [
+        7.0,
+        21.0
+      ],
+      "y_bounds_mm": [
+        51.05,
+        65.05
+      ]
+    },
+    {
+      "center_xy_mm": [
+        33.05,
+        58.05
+      ],
+      "x_bounds_mm": [
+        26.05,
+        40.05
+      ],
+      "y_bounds_mm": [
+        51.05,
+        65.05
+      ]
+    },
+    {
+      "center_xy_mm": [
+        52.1,
+        58.05
+      ],
+      "x_bounds_mm": [
+        45.1,
+        59.1
+      ],
+      "y_bounds_mm": [
+        51.05,
+        65.05
+      ]
+    }
+  ],
+  "switch_clip_seat_mm": 1.5,
+  "oled": {
+    "centers_xy_mm": [
+      [
+        67.5,
+        35.0
+      ],
+      [
+        67.5,
+        63.0
+      ],
+      [
+        98.5,
+        35.0
+      ],
+      [
+        98.5,
+        63.0
+      ]
+    ],
+    "hole_diameter_mm": 2.5,
+    "pin_diameter_mm": 2.2,
+    "lead_height_mm": 0.4,
+    "glass_flush_with_shell": true,
+    "pcb_hidden_inside": true,
+    "window_x_bounds_mm": [
+      65.55,
+      100.45
+    ],
+    "window_y_bounds_mm": [
+      38.0,
+      57.0
+    ],
+    "mount": "integral roof collars and downward pins; adhesive from below"
+  },
+  "mcu_slots": [
+    {
+      "center_x_mm": 12.5,
+      "x_bounds_mm": [
+        11.6,
+        13.4
+      ],
+      "y_bounds_mm": [
+        2.85,
+        23.65
+      ]
+    },
+    {
+      "center_x_mm": 27.5,
+      "x_bounds_mm": [
+        26.6,
+        28.4
+      ],
+      "y_bounds_mm": [
+        2.85,
+        23.65
+      ]
+    }
+  ],
+  "mcu_row_spacing_mm": 15.0,
+  "mcu_supports": false,
+  "separate_oled_frame": false,
+  "limits": [
+    "Physical switch clipping requires fit sample",
+    "PCB, glass Z thickness and component projections provisional",
+    "Adhesive behavior not simulated"
+  ]
+}

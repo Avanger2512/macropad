@@ -1,0 +1,17 @@
+{
+  "file": "cad/compact/oled_fit_coupon.stl",
+  "triangles": 2056,
+  "closed_two_manifold_edges": true,
+  "bounds_mm": [
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      36.0,
+      34.0,
+      3.5
+    ]
+  ]
+}

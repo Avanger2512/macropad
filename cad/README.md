@@ -1,5 +1,11 @@
 # Mechanical assets
 
+The current [compact C4 revision](compact/c4/README.md) corrects the first C3
+print: tighter MX apertures, OLED window shifted toward the encoder to match
+measured glass offset, integral upper OLED glue pins, and ESP slots15mm apart.
+It retains the C3 layout. STL exports include upper shell, flat bottom and an
+MX fit sample. Earlier revisions and printed Fusion V9 remain preserved.
+
 The native enclosure prototype and fit-print sequence are documented in [fusion/README.md](fusion/README.md). Its STEP/F3D exports are separate from the existing switch-mount assets below.
 
 The original files were moved here from the project root. Model geometry is unchanged; the 3MF slicer profile name was translated into English.

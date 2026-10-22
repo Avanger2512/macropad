@@ -1,0 +1,14 @@
+{
+  "triangles": 3064,
+  "closed_two_manifold_edges": true,
+  "min_mm": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "max_mm": [
+    36.0,
+    34.0,
+    2.8
+  ]
+}

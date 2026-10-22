@@ -1,0 +1,49 @@
+[
+  {
+    "input": "cad/compact/compact_model.step",
+    "mode": "view",
+    "outputs": [
+      {"path": "cad/compact/previews/c1-iso.png", "camera": "iso"},
+      {"path": "cad/compact/previews/c1-opposite.png", "camera": {"direction": [-1, 1, -0.8]}},
+      {"path": "cad/compact/previews/c1-top.png", "camera": "top"},
+      {"path": "cad/compact/previews/c1-front.png", "camera": "front"}
+    ],
+    "render": {"viewLabels": true, "padding": 0.12, "sizeProfile": "diagnostic"}
+  },
+  {
+    "input": "cad/compact/top_shell.step",
+    "mode": "view",
+    "outputs": [{"path": "cad/compact/previews/c1-shell-inside.png", "camera": {"direction": [-1, 1, -0.8]}}],
+    "render": {"viewLabels": true, "padding": 0.12, "sizeProfile": "diagnostic"}
+  },
+  {
+    "input": "cad/compact/bottom_cover.step",
+    "mode": "view",
+    "outputs": [{"path": "cad/compact/previews/c1-cover.png", "camera": "iso"}],
+    "render": {"viewLabels": true, "padding": 0.12, "sizeProfile": "diagnostic"}
+  },
+  {
+    "input": "cad/compact/mx_coupon.step",
+    "mode": "view",
+    "outputs": [{"path": "cad/compact/previews/c1-mx-coupon.png", "camera": "top"}],
+    "render": {"viewLabels": true, "padding": 0.12, "sizeProfile": "diagnostic"}
+  },
+  {
+    "input": "cad/compact/oled_cradle.step",
+    "mode": "view",
+    "outputs": [{"path": "cad/compact/previews/c1-oled-cradle.png", "camera": "iso"}],
+    "render": {"viewLabels": true, "padding": 0.12, "sizeProfile": "diagnostic"}
+  },
+  {
+    "input": "cad/compact/mcu_cradle.step",
+    "mode": "view",
+    "outputs": [{"path": "cad/compact/previews/c1-mcu-cradle.png", "camera": "iso"}],
+    "render": {"viewLabels": true, "padding": 0.12, "sizeProfile": "diagnostic"}
+  },
+  {
+    "input": "cad/compact/mcu_strap.step",
+    "mode": "view",
+    "outputs": [{"path": "cad/compact/previews/c1-mcu-strap.png", "camera": {"direction": [-1, 1, -0.8]}}],
+    "render": {"viewLabels": true, "padding": 0.12, "sizeProfile": "diagnostic"}
+  }
+]

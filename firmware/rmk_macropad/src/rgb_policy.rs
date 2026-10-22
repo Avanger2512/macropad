@@ -3,14 +3,9 @@ pub const PIXELS: usize = 4;
 pub const LATCH_BYTES: usize = 90;
 pub const FRAME_BYTES: usize = LATCH_BYTES * 2 + PIXELS * 9;
 
-pub fn layer_color(layer: u8) -> [u8; 3] {
-    match layer {
-        0 => [0, 12, 0],
-        1 => [0, 0, 12],
-        2 => [12, 4, 0],
-        3 => [8, 0, 12],
-        _ => [0; 3],
-    }
+/// The onboard WS2812 is blue only, and explicitly black when idle.
+pub fn status_color(on: bool) -> [u8; 3] {
+    if on { [0, 0, 20] } else { [0; 3] }
 }
 
 /// At 2.4 MHz each WS2812 bit is three SPI bits: zero=100, one=110.
@@ -37,13 +32,14 @@ mod tests {
     use super::*;
 
     #[test]
-    fn layers_have_distinct_dim_colors_and_unknown_is_off() {
-        assert_eq!(layer_color(0), [0, 12, 0]);
-        assert_ne!(layer_color(0), layer_color(1));
-        for layer in 0..4 {
-            assert!(layer_color(layer).iter().all(|value| *value <= 12));
-        }
-        assert_eq!(layer_color(255), [0; 3]);
+    fn status_is_blue_only_and_idle_is_black() {
+        assert_eq!(status_color(false), [0; 3]);
+        assert_eq!(status_color(true), [0, 0, 20]);
+        let frame = encode_frame(status_color(true));
+        // GRB stream: the G and R channels must both encode zero, B nonzero.
+        assert_eq!(&frame[LATCH_BYTES..LATCH_BYTES + 6],
+                   &[0x92, 0x49, 0x24, 0x92, 0x49, 0x24]);
+        assert_ne!(&frame[LATCH_BYTES + 6..LATCH_BYTES + 9], &[0x92, 0x49, 0x24]);
     }
 
     #[test]

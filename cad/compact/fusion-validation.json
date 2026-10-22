@@ -1,0 +1,96 @@
+{
+  "revision": "C1 OLED 31x28",
+  "fusion_mcp_validated": true,
+  "validation_kind": "native Fusion BRep checks of imported STEP mirror",
+  "source_step_sha256": "cf06118be746ff8bb7c272980f498c1e216025191a3fc3c4876935dc0987ed5d",
+  "imported_body_count": 45,
+  "native_pair_checks": 210,
+  "positive_volume_collisions": [],
+  "parts": {
+    "shell": {
+      "bbox_mm": [
+        106.00000000000001,
+        74.0,
+        16.400000000000002
+      ],
+      "volume_mm3": 23433.757671747706,
+      "solid": true,
+      "lumps": 1
+    },
+    "cover": {
+      "bbox_mm": [
+        106.00000000000001,
+        74.0,
+        2.4
+      ],
+      "volume_mm3": 18721.024182399608,
+      "solid": true,
+      "lumps": 1
+    },
+    "mcu_strap": {
+      "bbox_mm": [
+        23.000000000000004,
+        6.5000000000000036,
+        4.25
+      ],
+      "volume_mm3": 369.5469059200596,
+      "solid": true,
+      "lumps": 1
+    },
+    "oled_cradle": {
+      "bbox_mm": [
+        36.000000000000014,
+        34.0,
+        3.500000000000001
+      ],
+      "volume_mm3": 628.2872538276247,
+      "solid": true,
+      "lumps": 1
+    },
+    "mcu_cradle": {
+      "bbox_mm": [
+        24.000000000000004,
+        20.0,
+        1.2000000000000033
+      ],
+      "volume_mm3": 261.1200000000008,
+      "solid": true,
+      "lumps": 1
+    }
+  },
+  "oled": {
+    "centers_xy_mm": [
+      [
+        67.5,
+        35.0
+      ],
+      [
+        67.5,
+        63.0
+      ],
+      [
+        98.5,
+        35.0
+      ],
+      [
+        98.5,
+        63.0
+      ]
+    ],
+    "pitch_mm": [
+      31,
+      28
+    ],
+    "hole_diameter_mm": 2.5,
+    "pin_diameter_mm": 2.2,
+    "diametral_clearance_mm": 0.3,
+    "lead_height_mm": 0.5,
+    "centered_on_pcb_assumed": true
+  },
+  "limits": [
+    "Hardware envelopes except measured dimensions remain provisional",
+    "OLED pins locate only; upward retention still pending",
+    "Physical fit and slicing of the full shell not yet verified",
+    "Native document is a STEP mirror; Python source owns parameters"
+  ]
+}

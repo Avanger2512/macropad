@@ -1,0 +1,57 @@
+[
+  {
+    "input": "cad/compact/c4/compact_model.step",
+    "mode": "view",
+    "outputs": [
+      {
+        "path": "cad/compact/c4/previews/c4-compact_model.png",
+        "camera": "iso"
+      },
+      {
+        "path": "cad/compact/c4/previews/c4-layout-top.png",
+        "camera": "top"
+      }
+    ],
+    "render": {
+      "viewLabels": true,
+      "padding": 0.12,
+      "sizeProfile": "diagnostic"
+    }
+  },
+  {
+    "input": "cad/compact/c4/top_shell.step",
+    "mode": "view",
+    "outputs": [
+      {
+        "path": "cad/compact/c4/previews/c4-top-inside.png",
+        "camera": {
+          "direction": [
+            -1,
+            1,
+            -0.8
+          ]
+        }
+      }
+    ],
+    "render": {
+      "viewLabels": true,
+      "padding": 0.12,
+      "sizeProfile": "diagnostic"
+    }
+  },
+  {
+    "input": "cad/compact/c4/bottom_cover.step",
+    "mode": "view",
+    "outputs": [
+      {
+        "path": "cad/compact/c4/previews/c4-bottom_cover.png",
+        "camera": "iso"
+      }
+    ],
+    "render": {
+      "viewLabels": true,
+      "padding": 0.12,
+      "sizeProfile": "diagnostic"
+    }
+  }
+]
