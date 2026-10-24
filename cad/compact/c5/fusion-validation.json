@@ -1,0 +1,12 @@
+{
+  "fusion_mcp_validated": true,
+  "solid_count": 1,
+  "oled_pin_shafts": 4,
+  "shaft_diameter_mm": 2.2,
+  "dimensions_mm": [
+    106.00000000000001,
+    74.0,
+    16.400000000000002
+  ],
+  "volume_mm3": 23518.036184497716
+}

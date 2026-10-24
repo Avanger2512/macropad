@@ -1,0 +1,124 @@
+{
+  "angle_deg": 6.1155035662854065,
+  "differential_height_mm": 6.0,
+  "front_stack_mm": 3.2,
+  "rear_stack_mm": 9.2,
+  "support_min_z_mm": [
+    -4.440892098500626e-16,
+    -4.440892098500626e-16,
+    -2.220446049250313e-15,
+    -2.220446049250313e-15
+  ],
+  "screw_head_min_clearance_mm": 0.6176920308356688,
+  "screw_head_floor_min_clearance_mm": 0.5007056810810453,
+  "intersection_checks": 91,
+  "collisions": [],
+  "printed_parts": 4,
+  "rubber_pads": 4,
+  "parts": {
+    "rear_foot": {
+      "solids": 1,
+      "volume_mm3": 1133.832180691594,
+      "size_mm": [
+        14.0,
+        14.0,
+        8.340842532533859
+      ],
+      "min_mm": [
+        0.0,
+        0.0,
+        -8.266365894244634e-16
+      ],
+      "max_mm": [
+        14.0,
+        14.0,
+        8.340842532533859
+      ]
+    },
+    "front_foot": {
+      "solids": 1,
+      "volume_mm3": 210.20394053616297,
+      "size_mm": [
+        14.0,
+        14.0,
+        2.3408425325338604
+      ],
+      "min_mm": [
+        0.0,
+        0.0,
+        -8.266365894244634e-16
+      ],
+      "max_mm": [
+        14.0,
+        14.0,
+        2.3408425325338595
+      ]
+    },
+    "feet_set": {
+      "solids": 4,
+      "volume_mm3": 2688.072242455514,
+      "size_mm": [
+        32.0,
+        32.0,
+        8.340842532533859
+      ],
+      "min_mm": [
+        0.0,
+        0.0,
+        -8.266365894244634e-16
+      ],
+      "max_mm": [
+        32.0,
+        32.0,
+        8.340842532533859
+      ]
+    }
+  },
+  "minimum_material_behind_front_pocket_mm": 0.6399075789508594,
+  "pad_seat_diameter_mm": 10.3,
+  "pad_seat_normal_depth_mm": 0.4,
+  "foot_body_diameter_mm": 14.0,
+  "meshes": {
+    "rear_foot": {
+      "triangles": 666,
+      "closed_manifold_edges": true,
+      "consistent_winding": true,
+      "volume_mm3": 1132.5858423333307,
+      "size_mm": [
+        13.99763,
+        14.0,
+        8.34084
+      ],
+      "max_bbox_deviation_mm": 0.0023700000000008714
+    },
+    "front_foot": {
+      "triangles": 666,
+      "closed_manifold_edges": true,
+      "consistent_winding": true,
+      "volume_mm3": 209.97050936502248,
+      "size_mm": [
+        13.99763,
+        14.0,
+        2.34084
+      ],
+      "max_bbox_deviation_mm": 0.0023700000000008714
+    },
+    "feet_set": {
+      "triangles": 2664,
+      "closed_manifold_edges": true,
+      "consistent_winding": true,
+      "volume_mm3": 2685.112658856554,
+      "size_mm": [
+        31.99763,
+        32.0,
+        8.34084
+      ],
+      "max_bbox_deviation_mm": 0.002369999999999095
+    }
+  },
+  "limits": [
+    "Pads measured by user; adhesive thickness excluded",
+    "Adhesive strength and rubber compression untested",
+    "Remove existing pads before attaching new feet"
+  ]
+}

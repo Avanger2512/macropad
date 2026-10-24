@@ -1,0 +1,72 @@
+[
+  {
+    "input": "cad/compact/accessories/rear_feet/rear_foot.step",
+    "mode": "view",
+    "outputs": [
+      {
+        "path": "cad/compact/accessories/rear_feet/previews/rear_foot.png",
+        "camera": "iso"
+      }
+    ],
+    "render": {
+      "viewLabels": true,
+      "padding": 0.12,
+      "sizeProfile": "diagnostic"
+    }
+  },
+  {
+    "input": "cad/compact/accessories/rear_feet/front_foot.step",
+    "mode": "view",
+    "outputs": [
+      {
+        "path": "cad/compact/accessories/rear_feet/previews/front_foot.png",
+        "camera": "iso"
+      }
+    ],
+    "render": {
+      "viewLabels": true,
+      "padding": 0.12,
+      "sizeProfile": "diagnostic"
+    }
+  },
+  {
+    "input": "cad/compact/accessories/rear_feet/feet_set.step",
+    "mode": "view",
+    "outputs": [
+      {
+        "path": "cad/compact/accessories/rear_feet/previews/feet_set.png",
+        "camera": "iso"
+      }
+    ],
+    "render": {
+      "viewLabels": true,
+      "padding": 0.12,
+      "sizeProfile": "diagnostic"
+    }
+  },
+  {
+    "input": "cad/compact/accessories/rear_feet/fitted_case.step",
+    "mode": "view",
+    "outputs": [
+      {
+        "path": "cad/compact/accessories/rear_feet/previews/fitted_case.png",
+        "camera": "iso"
+      },
+      {
+        "path": "cad/compact/accessories/rear_feet/previews/fitted_case_side.png",
+        "camera": {
+          "direction": [
+            1,
+            0,
+            0.12
+          ]
+        }
+      }
+    ],
+    "render": {
+      "viewLabels": true,
+      "padding": 0.12,
+      "sizeProfile": "diagnostic"
+    }
+  }
+]

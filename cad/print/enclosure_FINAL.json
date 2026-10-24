@@ -1,0 +1,34 @@
+{
+  "files": [
+    {
+      "file": "top_shell_FINAL.stl",
+      "source": "cad/compact/c5/top_shell.stl",
+      "sha256": "a887b5ff69b5e1445c7892b06e144fd9a15e9554dc3b76c67c7a331750775566"
+    },
+    {
+      "file": "top_shell_FINAL.step",
+      "source": "cad/compact/c5/top_shell.step",
+      "sha256": "95a3597c6397f335d774e8dc25c0c1feba340cd2bdef0bf879f0c070a7706648"
+    },
+    {
+      "file": "top_shell_FINAL.f3d",
+      "source": "cad/compact/c5/top_shell.f3d",
+      "sha256": "3fb6563682fd8af496d15bfd3bd69e285bb32aa9c7b2f2fdbe23e045f57ea99a"
+    },
+    {
+      "file": "bottom_cover_with_feet_FINAL.stl",
+      "source": "cad/compact/accessories/rear_feet/bottom_cover_with_feet.stl",
+      "sha256": "81242943acc087d9ed50ee75267b54155c0fefdb8f279aff27079d2673e9a69f"
+    },
+    {
+      "file": "bottom_cover_with_feet_FINAL.step",
+      "source": "cad/compact/accessories/rear_feet/bottom_cover_with_feet.step",
+      "sha256": "4619843aaa1ac370b37c87c989ffeed896dcc7b66d7b9531610d306f6b975fd5"
+    },
+    {
+      "file": "bottom_cover_with_feet_FINAL.f3d",
+      "source": "cad/compact/accessories/rear_feet/bottom_cover_with_feet.f3d",
+      "sha256": "d6b2d39dc823ea29bad52db2a4391360b61af691d915970e8734e58b31c84d63"
+    }
+  ]
+}

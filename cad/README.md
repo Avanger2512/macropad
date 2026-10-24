@@ -1,10 +1,16 @@
 # Mechanical assets
 
-The current [compact C4 revision](compact/c4/README.md) corrects the first C3
+[Final print set](print/README_FINAL.md): C5 upper shell with full flush OLED and5mm inserts, plus integral-foot lower cover.
+
+
+The previous [compact C4 revision](compact/c4/README.md) corrects the first C3
 print: tighter MX apertures, OLED window shifted toward the encoder to match
 measured glass offset, integral upper OLED glue pins, and ESP slots15mm apart.
 It retains the C3 layout. STL exports include upper shell, flat bottom and an
 MX fit sample. Earlier revisions and printed Fusion V9 remain preserved.
+
+[Retrofit wedge feet](compact/accessories/rear_feet/README.md) fit Ø10 × 2 mm
+rubber pads and raise the rear by 6 mm, without reprinting the C4 case.
 
 The native enclosure prototype and fit-print sequence are documented in [fusion/README.md](fusion/README.md). Its STEP/F3D exports are separate from the existing switch-mount assets below.
 

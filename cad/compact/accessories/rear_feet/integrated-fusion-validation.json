@@ -1,0 +1,12 @@
+{
+  "fusion_mcp_validated": true,
+  "solid_count": 1,
+  "pad_seats": 4,
+  "pad_seat_diameter_mm": 10.3,
+  "dimensions_mm": [
+    106.00000000000001,
+    74.0,
+    10.740842532531982
+  ],
+  "volume_mm3": 21488.653594072195
+}

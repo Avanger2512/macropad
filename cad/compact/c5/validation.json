@@ -1,0 +1,34 @@
+{
+  "part": {
+    "solids": 1,
+    "volume_mm3": 23518.03618449753,
+    "size_mm": [
+      106.0,
+      74.0,
+      16.400000000000006
+    ],
+    "min_mm": [
+      -3.3306690738754696e-16,
+      -3.3306690738754696e-16,
+      2.4
+    ],
+    "max_mm": [
+      106.0,
+      74.0,
+      18.800000000000004
+    ]
+  },
+  "mesh": {
+    "triangles": 5392,
+    "closed_manifold_edges": true,
+    "consistent_winding": true,
+    "volume_mm3": 23516.04144796124,
+    "size_mm": [
+      106.0,
+      74.0,
+      16.400000000000002
+    ],
+    "max_bbox_deviation_mm": 3.552713678800501e-15
+  },
+  "C4_lower_cover_overlap_mm3": 0
+}

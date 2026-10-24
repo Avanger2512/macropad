@@ -1,0 +1,13 @@
+{
+  "triangles": 4156,
+  "closed_manifold_edges": true,
+  "consistent_winding": true,
+  "volume_mm3": 21484.07535730297,
+  "size_mm": [
+    106.0,
+    74.0,
+    10.74084
+  ],
+  "max_bbox_deviation_mm": 2.532533860843955e-06,
+  "foot_to_head_min_distance_mm": 0.2176920308356662
+}

@@ -1,0 +1,16 @@
+{
+  "fusion_mcp_validated": true,
+  "source_step_sha256": "ef850675c1bcbe24097c6b017acb9f7e259640502f78eb96a50341da83ed630c",
+  "body_count": 14,
+  "intersection_checks": 91,
+  "collisions": [],
+  "pad_floor_z_mm": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "four_pad_seats_diameter_mm": 10.3,
+  "screw_head_floor_min_clearance_mm": 0.5007056810813559,
+  "source_angle_deg": 6.1155035662854065
+}
