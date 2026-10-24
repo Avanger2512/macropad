@@ -37,7 +37,7 @@ mod keyboard {
             esp_hal::spi::master::Config::default()
                 .with_frequency(esp_hal::time::Rate::from_hz(2_400_000))
                 .with_mode(esp_hal::spi::Mode::_0),
-        ).expect("RGB SPI configuration").with_mosi(p.GPIO48);
-        crate::rgb::LayerRgb::new(spi)
+        ).expect("RGB SPI configuration");
+        crate::rgb::LayerRgb::new(spi, esp_hal::gpio::Flex::new(p.GPIO48))
     }
 }

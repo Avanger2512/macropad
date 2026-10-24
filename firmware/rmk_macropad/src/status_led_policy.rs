@@ -7,11 +7,12 @@ pub struct StatusLedPolicy {
     sequence: Option<(u64, u8)>,
     alert_since: Option<u64>,
     pending_layer: bool,
+    key_until: u64,
 }
 
 impl StatusLedPolicy {
     pub const fn new() -> Self {
-        Self { layer: None, sequence: None, alert_since: None, pending_layer: false }
+        Self { layer: None, sequence: None, alert_since: None, pending_layer: false, key_until: 0 }
     }
 
     /// First observation establishes startup state without flashing.
@@ -25,8 +26,22 @@ impl StatusLedPolicy {
             layer: Some(layer),
             sequence: if valid { Some((now_ms, layer + 1)) } else { None },
             pending_layer: valid && self.alert_since.is_some(),
+            key_until: 0,
             ..self
         }
+    }
+
+    /// Ignore input feedback during higher-priority attention/layer sequences.
+    pub fn key_pressed(self, now_ms: u64) -> Self {
+        let sequence_active = self.sequence.is_some_and(|(start, count)| {
+            now_ms.saturating_sub(start) < u64::from(count) * 400
+        });
+        if self.alert_since.is_some() || sequence_active { return self; }
+        Self { key_until: now_ms.saturating_add(100), ..self }
+    }
+
+    pub fn input_active(self, now_ms: u64) -> bool {
+        self.alert_since.is_none() && now_ms < self.key_until
     }
 
     pub fn update(self, alert: AlertKind, now_ms: u64) -> (Self, bool) {
@@ -37,6 +52,7 @@ impl StatusLedPolicy {
             });
             let next = Self {
                 alert_since: Some(since),
+                key_until: 0,
                 pending_layer: self.pending_layer || sequence_active,
                 ..self
             };
@@ -52,7 +68,7 @@ impl StatusLedPolicy {
                 return (next, elapsed % 400 < 150);
             }
         }
-        (Self { sequence: None, ..next }, false)
+        (Self { sequence: None, ..next }, now_ms < next.key_until)
     }
 }
 
@@ -61,6 +77,24 @@ mod tests {
     use super::*;
 
     fn baseline() -> StatusLedPolicy { StatusLedPolicy::new().layer_changed(0, 0) }
+
+    #[test]
+    fn key_press_pulses_expire_and_retrigger() {
+        let state = baseline().key_pressed(10);
+        assert!(state.update(AlertKind::None, 10).1);
+        assert!(state.update(AlertKind::None, 109).1);
+        assert!(!state.update(AlertKind::None, 110).1);
+        assert!(state.key_pressed(90).update(AlertKind::None, 150).1);
+    }
+
+    #[test]
+    fn keys_do_not_fill_alert_or_layer_dark_intervals() {
+        let (state, _) = baseline().update(AlertKind::Question, 0);
+        assert!(!state.key_pressed(300).update(AlertKind::Question, 300).1);
+        let state = baseline().layer_changed(1, 0).key_pressed(200);
+        assert!(!state.update(AlertKind::None, 200).1);
+        assert!(!state.update(AlertKind::None, 800).1);
+    }
 
     #[test]
     fn startup_and_idle_are_dark() {

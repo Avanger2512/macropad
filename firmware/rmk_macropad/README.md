@@ -1,6 +1,32 @@
 # ESP32-S3 Macropad — RMK / Vial
 
-Current hardware mode, October 22, 2026: the OLED was physically damaged and
+## October 24 update — power and input indication
+
+User removed the separate distracting blue charge LED. Firmware now requests
+steady red from the discrete GPIO48 LED by switching its shared net to GPIO
+HIGH between RGB writes. SPI2 FSPID is routed to GPIO48 only for a framed
+WS2812 update; leading/trailing300µs low reset periods surround GRB data.
+A final0xff byte and explicit GPIO HIGH restore the red idle level. Red/DIN
+share a physical net; WS2812 long idle-HIGH is outside the ordinary low-idle
+protocol. Owner confirmed steady red and initial color behavior on this board;
+extended testing is ongoing.
+
+Brightness increases20→64/255. Layers stay blue; Codex attention is cyan,
+Claude attention orange, and BOTH alternates colors on a600ms cadence (a color transition may occur
+during a lit interval). Physical key presses (including encoder
+push, excluding rotary-only events and releases) cause100ms green feedback,
+retriggerable during idle. Attention alerts and layer-count series have priority;
+input cannot fill their dark intervals. Layer flashes remain1–4, attention
+250ms on/600ms period; RGB is otherwise off.
+
+Build/tests: release built offline with locked dependencies,10 timing tests,
+3 color/framing tests and25 host tests pass. Existing unused pulse_color and Xtensa
+RWX linker warnings remain. Artifact `build/rmk/macropad-vial-bright-input-app.bin`
+has SHA256 sidecar. Hardware validation/flash status is recorded
+in `../VERIFICATION.md` after upload.
+
+
+Previous hardware mode, October 22, 2026: the OLED was physically damaged and
 the external LED strip is disconnected. The onboard WS2812 on GPIO48 provides
 **blue-only status**. Attention from either Codex or Claude flashes for 250 ms
 in each 600 ms period. Changing layer 0/1/2/3 produces 1/2/3/4 flashes, each
@@ -75,7 +101,7 @@ OLED content is configured in firmware, not in the Vial GUI.
 
 ```sh
 python3 -m unittest discover -s firmware/tests -p 'test_rmk_config.py'
-rustc --test firmware/rmk_macropad/src/rgb_policy.rs -o /tmp/macropad-rgb-tests
+rustc --edition 2024 --test firmware/tests/test_rgb_policy.rs -o /tmp/macropad-rgb-tests
 /tmp/macropad-rgb-tests
 ```
 

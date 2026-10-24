@@ -93,3 +93,23 @@ bridge acknowledged Codex and combined Claude/Codex attention states.
 The owner explicitly confirmed: “Синий мигает, слои тоже показываются.”
 Blue indication and encoder layer switching are now physically verified.
 OLED communication was not repaired or verified by this change.
+
+## October 24, 2026 — power LED, input and source colors
+
+Built locked/offline release with explicit GPIO48 SPI/GPIO routing. Red is
+held HIGH between complete RGB frames; shared DIN idleHIGH remains an
+shared-line mode. Owner confirmed the red LED stays on and initial color
+changes look correct; extended testing is ongoing. Layer blue and input
+green use64/255 intensity; key pulse100ms. Codex cyan, Claude orange, BOTH
+alternates on600ms global cadence. Attention/layer priority retained.
+
+10 timing tests,3 color/framing tests and25 host tests pass. Build warnings:
+legacy unused pulse_color, now-unused alerts::current, existing Xtensa RWX.
+Full4MiB backup `build/recovery/rmk-before-power-led-2026-10-24.bin` andSHA256
+saved. Only app0x10000 was written. App620496bytes SHA256
+`260b4d6a96e4b41b7be56cbe48366a25ff71004b27104cd2c580a16bb4d61fa3`.
+Native flash MD5 `2c8bc7fc32b0feb37566a60f6e09c9e7` matches generated image.
+All65536bytes atRMKsettings0x3F0000 compare unchanged before/after.
+Watchdog restart succeeded and all keyboard/Vial/alert HID interfaces returned.
+Owner confirmed steady red and initial color behavior; comprehensive input/
+notification color checks remain in progress.
